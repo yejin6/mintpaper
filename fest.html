@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINT PAPER</title>
+    <link rel="favicon" href="./favicon.ico">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --main-color: #00E5A7;
+            --bg-color: #000;
+
+            --bright-color-01: #fff;
+            --bright-color-02: #DADADA;
+            --bright-color-03: #B7B7B7;
+            --caption: #B7B7B7;
+
+            --stroke-01: #767676;
+            --stroke-02: #343434; 
+
+            --width-per: 67%;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Pretendard Variable';
+            background-color: var(--bg-color);
+            position: absolute;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        #top-btn{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            padding: 13px;
+            border: solid 1px var(--bright-color-01);
+            border-radius: 100px;
+            position: fixed;
+            top: 90vh;
+            right: 50px;
+            z-index: 1000;
+        }
+
+        /*-------header-------*/
+        .nav-wrap{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                position: fixed;
+                z-index: 100;
+            }
+                .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: var(--width-per);
+                    height: 60px;
+                }
+                    .logo{
+                        display: flex;
+                        flex: 1;
+                    }
+                        .logo a{
+                            height: 20px;
+                        }
+                    .navbar-menu{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                        .navbar-item{
+                            padding: 12px 10px;
+                        }
+                        .navbar-menu a{
+                            color: var(--bright-color-01);
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    .utility{
+                        display: flex;
+                        flex: 1;                    
+                        justify-content: flex-end;
+                        padding: 0;
+                    }
+                        .search-btn{
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+
+        /*-----------------------------------media---------------------------------*/
+        @media (min-width: 768px) {/*-----------큰화면전용-----------*/
+                /*-------header-------*/
+                .nav-mobile{
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+            }
+
+            @media (max-width: 429.9px) {/*-----------420px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+            }
+    </style>
+</head>
+<body>
+    <a href="#" id="top-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+    </a>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="nav-wrap">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                    </div>
+                    <div class="nav-content">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="">About us</a></li>
+                            <li class="navbar-item"><a href="">Festival</a></li>
+                            <li class="navbar-item"><a href="">Project</a></li>
+                            <li class="navbar-item"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="nav-mobile">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                    </button>
+
+                    <div class="utility">
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+     <!-- conA -->
+     <!-- conB -->
+     <!-- conC -->
+     <!-- conD -->
+     <!-- conE -->
+</body>
+</html>

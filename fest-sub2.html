@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINT PAPER</title>
+    <link rel="favicon" href="./favicon.ico">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    
+    <style>
+        :root{
+            --main-color: #00E5A7;
+            --bg-color: #000;
+
+            --bright-color-01: #fff;
+            --bright-color-02: #DADADA;
+            --bright-color-03: #B7B7B7;
+            --caption: #B7B7B7;
+
+            --stroke-01: #767676;
+            --stroke-02: #343434; 
+
+            --width-per: 67%;
+            --large-width: 1280px;
+            --web-margin: 320px;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Pretendard Variable';
+            background-color: var(--bg-color);
+            position: absolute;
+            width: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        /*-------header-------*/
+            .nav-wrap{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                position: fixed;
+                z-index: 100;
+            }
+                .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: var(--width-per);
+                    height: 60px;
+                }
+        /* 스크롤 시 배경색 변경 */
+        .scrolled {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border-bottom: solid 1px var(--bright-color-01);
+        }
+        /* 가짜 콘텐츠 */
+        .content {
+        height: 2000px; /* 스크롤을 위한 가짜 콘텐츠 높이 */
+        }
+                    .logo{
+                        display: flex;
+                        flex: 1;
+                    }
+                        .logo a{
+                            height: 20px;
+                        }
+                    .navbar-menu{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                        .navbar-item{
+                            padding: 12px 10px;
+                        }
+                        .navbar-menu a{
+                            color: var(--bright-color-01);
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    .utility{
+                        display: flex;
+                        flex: 1;                    
+                        justify-content: flex-end;
+                        padding: 0;
+                    }
+                        .search-btn{
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+                        .hero{
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.8),
+                    rgba(0, 0, 0, 0.1)65%,
+                    rgba(0, 0, 0, 1)
+                    ), 
+                    url(img/main/hero-iamge.jpg);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: 900px;
+            }
+
+        /*-------conA-------*/
+        .conA{
+            width: var(--width-per);
+            margin: 200px auto;
+        }
+        h2{
+            color: var(--bright-color-01, #FFF);
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .conA p{
+            color: var(--bright-color-02, #DADADA);
+            font-size: 20px;
+            text-align: center;
+            margin: 10px 0 80px;
+        }
+        iframe{
+            aspect-ratio: 16 / 9;
+        }
+
+        /*-------conB-------*/
+
+
+
+
+
+        /*-----------------------------------media---------------------------------*/
+        @media (min-width: 768px) {/*-----------큰화면전용-----------*/
+                /*-------header-------*/
+                .nav-mobile{
+                    display: none;
+                }
+                
+            }
+
+            @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+            }
+
+            @media (max-width: 429.9px) {/*-----------420px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+                
+            }
+
+    </style>
+
+    <script>
+        // JavaScript를 사용하여 스크롤 이벤트를 처리합니다.
+        window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        });
+    </script>
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="nav-wrap" id="navbar">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                    </div>
+                    <div class="nav-content">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="">About us</a></li>
+                            <li class="navbar-item"><a href="">Festival</a></li>
+                            <li class="navbar-item"><a href="">Project</a></li>
+                            <li class="navbar-item"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="nav-mobile">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                    </button>
+
+                    <div class="utility">
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- conA -->
+    <section class="conA">
+            <h2>그랜드 민트 페스티벌 2023 하이라이트</h2>
+            <p>Grand Mint Festival 2023 Official HIGHLIGHTS</p>
+            <iframe width="100%" src="https://www.youtube.com/embed/OYkFvlR2W4U?si=yr0IP5qqgdSeFPz-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+
+    <!-- conB -->
+    <section class="conB">
+        
+    </section>
+
+    <!-- footer -->
+</body>
+</html>

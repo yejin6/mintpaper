@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINT PAPER</title>
+    <link rel="favicon" href="./favicon.ico">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --main-color: #00E5A7;
+            --bg-color: #000;
+
+            --bright-color-01: #fff;
+            --bright-color-02: #DADADA;
+            --bright-color-03: #B7B7B7;
+            --caption: #B7B7B7;
+
+            --stroke-01: #767676;
+            --stroke-02: #343434; 
+
+            --width-per: 67%;
+            --large-width: 1280px;
+            --web-margin: 320px;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Pretendard Variable';
+            background-color: var(--bg-color);
+            position: absolute;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        #top-btn{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            padding: 13px;
+            border: solid 1px var(--bright-color-01);
+            border-radius: 100px;
+            position: fixed;
+            top: 90vh;
+            right: 50px;
+            z-index: 1000;
+        }
+        /*-------header-------*/
+        .nav-wrap{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 60px;
+            position: fixed;
+            z-index: 100;
+        }
+            .navbar{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: var(--width-per);
+                height: 60px;
+                background-color: transparent;
+            }
+
+        /* 스크롤 시 배경색 변경 */
+        .scrolled {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border-bottom: solid 1px var(--bright-color-01);
+        }
+        /* 가짜 콘텐츠 */
+        .content {
+        height: 2000px; /* 스크롤을 위한 가짜 콘텐츠 높이 */
+        }
+                .logo{
+                    display: flex;
+                    flex: 1;
+                }
+                    .logo a{
+                        height: 20px;
+                    }
+                .navbar-menu{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 16px;
+                }
+                    .navbar-item{
+                        padding: 12px 10px;
+                    }
+                    .navbar-menu a{
+                        color: var(--bright-color-01);
+                        font-size: 15px;
+                        font-weight: 400;
+                    }
+                .utility{
+                    display: flex;
+                    flex: 1;                    
+                    justify-content: flex-end;
+                    padding: 0;
+                }
+                    .search-btn{
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                    }
+        
+        .hero{
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0.1)65%,
+                rgba(0, 0, 0, 1)
+                ), 
+                url(img/main/hero-iamge.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 900px;
+            
+        }
+            .hero-txt{
+                padding-top: 360px;
+                text-align: center;
+            }
+            h2{
+                font-family: Roboto;
+                font-size: 96px;
+                font-weight: 900;
+                letter-spacing: 9.6px;
+                color: transparent;
+                -webkit-text-stroke: 2px var(--bright-color-01);
+                margin-bottom: 14px;
+            }
+            .hero-txt p{
+                color: var(--bright-color-01, #FFF);
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 20px; /* 100% */
+                letter-spacing: -2.5%;
+                margin-bottom: 120px;
+            }
+            .hero-txt a{
+                color: var(--bright-color-01, #FFF);
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 20px; /* 100% */
+                letter-spacing: -0.5px;
+                border: solid 1px var(--bright-color-01, #fff);
+                padding: 12px 44px;
+                transition: all 0.2s ease-in;
+            }
+            .hero-txt a:hover{
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            
+
+        /*-------공통-------*/
+        h3{
+            font-family: Roboto;
+            font-size: 54px;
+            font-weight: 700;
+            letter-spacing: -2.5%;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--bright-color-01);
+        }
+        p{
+            color: var(--bright-color-02, #DADADA);
+            font-size: 16px;
+            letter-spacing: -2.5%;
+        }
+        h4{
+            color: var(--main-color, #00E5A7);
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: -2.5%;
+        }
+        
+
+        /*-------conA-mint paper-------*/
+        .conA{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+            .conA h3{
+                text-align: center;
+            }
+            .conA .center{
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            .conA-cont{
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: 60px;
+                width: 90%;
+                margin: 0 auto;
+            }
+            
+            .conA .cont{
+                display: flex;
+                gap: 20px;
+            }
+            .conA .cont:nth-child(2){
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            .conA-cont .cont .photo{
+                flex: 2;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .conA-cont .cont .info{
+                display: block;
+                /* display: flex;
+                flex-direction: column; */
+                /* align-items: flex-end; */ /*왜 컬럼일때는 이모양인가*/
+                flex: 3;
+                
+                padding: 20px;
+            }
+            .conA-cont .cont .info p{
+                color: var(--bright-color-02, #DADADA);
+                font-size: 18px;
+                line-height: 28px; /* 155.556% */
+                letter-spacing: -0.45px;
+                margin-top: 20px;
+            }
+                
+
+        /*-------conB-project-------*/
+        .conB{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+        }
+
+        /*-------conC-now on-------*/
+        .conC{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+        }
+            .conC h3{
+                margin-bottom: 40px;
+            }
+            .conC-cont{
+                display: flex;
+                flex-direction: column;
+            }
+                .video{
+                    display: flex;
+                    width: 100%;
+                    gap: 24px;
+                }
+                    iframe{
+                        width: 50%;
+                        aspect-ratio: 16/9;
+                    }
+                .conC a{
+                    color: var(--bright-color-01, #FFF);
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: -0.4px;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    text-align: center;
+                    margin-top: 40px;
+                    border: 1px solid var(--stroke-01, #767676);
+                }
+
+        /*-------conD-news-------*/
+        .conD{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+        }
+        .conD .title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+            .more-btn{
+                border-radius: 100px;
+                border: 1px solid var(--bright-color-01, #FFF);
+                display: inline-flex;
+                padding: 10px;
+                width: 44px;
+                height: 44px;
+                justify-content: center;
+                align-items: center;
+            }
+        .conD-cont{/*전체*/
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 24px;
+        }
+            .conD-cont-colu{/*개별*/
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    width: 100%
+                }
+            .conD article{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .conD article a{
+                /* flex: 1; */
+                display: inline-block;
+                width: 100%;
+            }
+            .conD .photo{
+                background-position: center;
+                background-size: cover;
+            }   
+                .ph01{
+                    height: 600px;
+                    background-image: url(img/main/news01.jpg);
+                }
+                .ph02{
+                    height: 500px;
+                }
+                .ph03{
+                    height: 260px;
+                }
+                .ph04{
+                    height: 550px;
+                }.ph05{
+                    height: 280px;
+                }.ph06{
+                    height: 340px;
+                }.ph07{
+                    height: 276px;
+                }
+                .ph08{
+                    height: 270px;
+                }
+            .conD-cont-colu .info{
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+            }
+            h5{
+                color: var(--bright-color-01, #FFF);
+                font-size: 24px;
+                font-weight: 500;
+                letter-spacing: -0.6px;
+                margin-bottom: 10px;
+            }
+            .conD .sub-title{
+                /*color: var(--bright-color-03, #B7B7B7);*/ /*---왜 적용이 안되냐???--*/
+                font-size: 16px;
+                line-height: 24px; /* 150% */
+                letter-spacing: -0.4px;
+                margin-bottom: 60px;
+            }
+
+            .conD a:hover .photo{
+                transform: scale(1.2);
+            }
+
+        /*-------conE-contect-------*/
+        .conE{
+            width: var(--width-per);
+            margin: 0 auto;
+            min-width: 800px;
+        }
+        
+        .conE-cont{
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+        }
+        .conE a{
+            width: 100%;
+            border-bottom: solid 1px var(--main-color);
+        }
+        .conE .cont{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 20px 10px;
+        }
+        .conE .title{
+            color: var(--bright-color-01, #FFF);
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: -0.6px;
+            margin-bottom: 4px;
+        }
+        .conE .sub-title{
+            color: var(--caption, #B5B5B5);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.35px;
+        }
+
+        /*-------footer-------*/
+        footer{
+            width: var(--width-per);
+            margin: 160px auto 0;
+        }
+        .footA{
+            padding: 20px;
+            border-bottom: solid 1px var(--stroke-01);
+        }
+            .footA ul{
+                display: flex;
+                gap: 40px;
+            }
+                .footA a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                    line-height: 24px; /* 133.333% */
+                }
+                #mint{
+                    color: var(--main-color, #00E5A7);
+                    font-weight: 500;
+                }
+        
+            .footB{
+                display: flex;
+                padding: 20px;
+                align-items: center;
+            }
+                .footB ul{
+                    display: flex;
+                    gap: 40px;
+                }
+                .footB li a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+                .footB img{
+                    filter: brightness(50%); 
+                }
+                #flex{
+                    display: flex;
+                    gap: 6px;
+                }
+            
+            .footC{
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 60px 0;
+            }
+                .footC ul{
+                    display: flex;
+                    gap: 20px;
+                }
+                .footC .copyright{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                }
+
+            /*-----------------------------------media---------------------------------*/
+            @media (min-width: 768px) {/*-----------큰화면전용-----------*/
+                /*-------header-------*/
+                .nav-mobile{
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+                .hero{
+                    height: 700px;
+                }
+                    .hero-txt{
+                        padding-top: 360px;
+                        text-align: center;
+                    }
+                    h2{
+                        font-size: 64px;
+                        letter-spacing: 6.4px;
+                    }
+                    .hero-txt p{
+                        font-size: 16px;
+                        letter-spacing: -0.4%;
+                        margin-bottom: 100px;
+                    }
+                    .hero-txt a{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                /*-------공통-------*/
+                h3{
+                    font-size: 36px;
+                    letter-spacing: -0.9px;
+                    color: transparent;
+                }
+                p{
+                    font-size: 14px;
+                    letter-spacing: -0.35px;
+                }
+                h4{
+                    font-size: 27px;
+                    letter-spacing: -0.7px;
+                }   
+
+                /*-------conA-mint paper-------*/
+                .conA{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+                    .conA-cont{
+                        width: 90%;
+                    }
+                    .conA-cont .cont .info p{
+                        font-size: 14px;
+                        letter-spacing: -0.3px;
+                    }
+
+                /*-------conB-project-------*/
+                .conB{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+
+                /*-------conC-now on-------*/
+                .conC{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+
+                /*-------conD-news-------*/
+                .conD{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+                    .more-btn{
+                        width: 24px;
+                        height: 24px;
+                    }
+                .conD-cont{/*전체*/
+                    display: flex;
+                    gap: 24px;
+                    overflow: hidden;
+                }
+                    .conD-cont-colu{/*개별*/
+                            flex-direction: row;
+                        }
+                
+                /*-------conE-contect-------*/
+                .conE{
+                    width: 90%;
+                    margin: 0 auto;
+                    min-width: 800px;
+                }
+                
+                .conE-cont{
+                    flex-direction: column;
+                    gap: 40px;
+                }
+
+                /*-------footer-------*/
+                footer{
+                    width: 90%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 20px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px;
+                        align-items: center;
+                    }
+                        .footB ul{
+                            display: flex;
+                            gap: 40px;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px;
+                        }
+                        .footB img{
+                            filter: brightness(50%); 
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 60px 0;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
+                    }
+
+            @media (max-width: 429.9px) {/*-----------430px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+            }
+
+
+    </style>
+
+    
+
+
+    <script>
+        // JavaScript를 사용하여 스크롤 이벤트를 처리합니다.
+        window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        });
+    </script>
+
+
+
+</head>
+<body>
+    <a href="#" id="top-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+    </a>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="nav-wrap" id="navbar">
+                <div class="navbar">
+                    <div class="logo" >
+                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                    </div>
+                    <div class="nav-content">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="">About us</a></li>
+                            <li class="navbar-item"><a href="">Festival</a></li>
+                            <li class="navbar-item"><a href="">Project</a></li>
+                            <li class="navbar-item"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="nav-mobile">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                    </button>
+
+                    <div class="utility">
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="content">
+                    <!-- 가짜 콘텐츠 -->
+                  </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-txt">
+                    <h2>NEXT PATTERN</h2>
+                    <p>두꺼운 챕터를 정리하고, 미지의 페이지에 써 내려갑니다</p>
+                    <a href="">자세히보기</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- conA -->
+    <section class="conA">
+        <h3>MINT PAPER</h3>
+        <p class="center">민트페이퍼는 이제 겹겹이 채워진 유물을 자산으로 흥미진진한 변화와 스스로의 기회를 맞이하고자 합니다.</p>
+        <div class="conA-cont">
+            <div class="cont">
+                <div class="info">
+                    <h4>Festival</h4>
+                    <p>민트페이퍼는 페스티벌 브랜드의 아이덴티티를 강화하고, 자체 팀을 구성하여 내부 브랜드와 외부 기업과의 협업을 확대하며, 한국 페스티벌을 원조의 모습으로 다시 정립하고자 합니다.</p>
+                </div>
+                <div class="photo" style="background-image: url(/img/main/mintpaper01.jpg);"></div>
+            </div>
+            <div class="cont">
+                <div class="info">
+                    <h4>Contents</h4>
+                    <p>민트페이퍼는 다양하고 따뜻한 콘텐츠로 변화하고 있습니다. 수년간 축적된 자료와 특별한 영상, 새로운 오리지널 콘텐츠를 제공하며 기존 음악 방향성을 유지하되, 외부 채널과의 협업 및 새 분야 확장을 고려합니다.</p>
+                </div>
+                <div class="photo" style="background-image: url(/img/main/mintpaper02.jpg);"></div>
+            </div>
+            <div class="cont">
+                <div class="info">
+                    <h4>Commerce</h4>
+                    <p>'민트페이퍼샵'은 특별하고 독창적인 아이템으로, 젊은 예술가들의 작품을 주로 선보이며, 사람들의 개성을 존중하는 곳입니다. 젊은 예술가들과 함께 성장하며 민트페이퍼 팀의 다양한 관심사를 반영한 상품과 콘텐츠를 제공합니다.</p>
+                </div>
+                <div class="photo" style="background-image: url(/img/main/mintpaper03.jpg);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- conB -->
+    <section class="conB">
+        <h3>PROJECT</h3>
+        <p>민트페이퍼 만의 색이 담긴 시리즈</p>
+        <div class="conB-cont">
+
+        </div>
+    </section>
+
+    <!-- conC -->
+    <section class="conC">
+        <h3>NOW ON</h3>
+        <!-- <div class="conC-cont"> -->
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/eZZKTRcZHmI?si=dejDCcNBHe_jvfEj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/BsYa1VNy__8?si=kEEIwjJtdYu2hEM3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <a href="https://www.youtube.com/@MintPaper_/videos" target="_blank">더 보기</a>
+        <!-- </div> -->
+    </section>
+
+    <!-- conD -->
+    <section class="conD">
+        <div class="title">
+            <h3>NEWS</h3>
+            <a href="" class="more-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M5 12H19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg></a>
+        </div>
+        <div class="conD-cont">
+            <div class="conD-cont-colu">
+                <article>
+                    <a href="#">
+                        <div class="photo ph01" style="background-image: url(img/main/news01.jpg);"></div>
+                        <div class="info">
+                            <h5>CDF2023-2024 D-30을 맞이하며</h4>
+                            <p class="sub-title">올해의 마지막 실내 페스티벌 카운트다운 판타지의 D글이 시작되었습니다! D글을 보시는 모든 분들이 따뜻한 연말과 멋진 새해를 맞길 바라며!</p>
+                            <p class="date">2023.11.30</p>
+                        </div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="photo ph02" style="background-image: url(img/main/news02.jpg);"></div>
+                        <div class="info">
+                            <h5>GMF2023 Awards 결과 발표</h4>
+                            <p class="sub-title">GMF2023 AWARDS 수상자는 11월 12일 민트페스타 vol. 71 EXPRESSION 현장 발표되었습니다. 다시 한번 현장에서 즐겁게 참여해주신 모든 관객 분들과 멋진 무대를 만들어주신 아티스트분들께 감사드립니다!</p>
+                            <p class="date">2023.11.12</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="conD-cont-colu">
+                <article>
+                    <a href="#">
+                        <div class="photo ph03" style="background-image: url(img/main/news03.jpg);"></div>
+                        <div class="info">
+                            <h5>78LIVE - MmmPaa(음파) 프로젝트</h4>
+                            <p class="sub-title">한정된 시간 속 무한한 시도 ‘78LIVE’
+                                단 78분 동안만 진행되는 독특한 러닝타임의 공연. 아티스트와 함께 그 시간이 지나면 마법같이 사라질 무대에 빠져보세요.</p>
+                            <p class="date">2023.11.12</p>
+                        </div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="photo ph04" style="background-image: url(img/main/news04.jpg);"></div>
+                        <div class="info">
+                            <h5>CDF 공연 종료시각 관련 안내 및 입장문</h4>
+                            <p class="sub-title">CDF 공연 종료시각이 변경되었습니다. 해당 부분으로 인해 불편을 겪으신 모든 예매자분께 죄송하다는 말씀 전합니다.</p>
+                            <p class="date">2023.12.04</p>
+                        </div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="photo ph05" style="background-image: url(img/main/news05.jpg);"></div>
+                        <div class="info">
+                            <h5>[사진] 브라이트랩 | 10.21(sat)</h4>
+                            <p class="sub-title">GMF2023 | 10.21(sat)</p>
+                            <p class="date">2023.11.08</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="conD-cont-colu">  
+                <article>
+                    <a href="#">
+                        <div class="photo ph06" style="background-image: url(img/main/news06.jpg);"></div>
+                        <div class="info">
+                            <h5>A.N.D #40</h4>
+                            <p class="sub-title">2015년 9월. 어렵지 않은, 부담 없이 즐길 수 있는 페스티벌을 표방하며 ‘Have A Nice Day’를 통해 3천여 관객과 처음 인사한 이후,이제 우리는 ‘Another Nice Day’를 통해 조금 더 자주, 가까이에서 인사를 나누고자 합니다.</p>
+                            <p class="date">2023.11.29</p>
+                        </div>
+                    </a>
+                </article>
+                <article>
+                    <a href="#">
+                        <div class="photo ph07" style="background-image: url(img/main/news07.jpg);"></div>
+                        <div class="info">
+                            <h5>[사진] 브라이트랩 | 10.22(sun)</h4>
+                            <p class="sub-title">GMF2023 | 10.22(sun)</p>
+                            <p class="date">2023.11.08</p>
+                        </div>
+                    </a>
+                </article>
+                <div class="cont-info">
+                    <a href="#">
+                        <div class="photo ph08" style="background-image: url(img/main/news08.jpg);"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- conE -->
+    <section class="conE">
+        <div class="conE-cont">
+            <a href="">
+                <div class="cont">
+                        <div class="info">
+                            <p class="title">기업 제휴ㆍ스폰서 문의</h4>
+                            <p>페스티벌ㆍ콘텐츠ㆍetc</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M4.33337 12H20.3334M20.3334 12L14.3334 6M20.3334 12L14.3334 18" stroke="#00E5A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+            </a>
+            <a href="">
+                <div class="cont">
+                        <div class="info">
+                            <p class="title">아티스트 등록ㆍ음원 접수</h4>
+                            <p class="sub-title">게시판 등록ㆍ앨범 시리즈 음원 접수</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M4.33337 12H20.3334M20.3334 12L14.3334 6M20.3334 12L14.3334 18" stroke="#00E5A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+            </a>
+            <a href="">
+                <div class="cont">
+                        <div class="info">
+                            <p class="title">78AVENUE 대관 문의</h4>
+                            <p class="sub-title">LOUNGE M.ㆍTHE PARKㆍCAFE RICCARDO</p>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M4.33337 12H20.3334M20.3334 12L14.3334 6M20.3334 12L14.3334 18" stroke="#00E5A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="footA">
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="" id="mint">개인정보취급방침</a></li>
+                </ul>
+            </div>
+            <div class="footB">
+                <div class="logo">
+                    <img src="/img/logo.png" alt="" height="36">
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><a href="">About Mint Paper</a></li>
+                        <li><a href="">Contact us</a></li>
+                        <li><a href="" id="flex">
+                            <div class="text">Family site</div>
+                            <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <path d="M6 9.5L12 15.5L18 9.5" stroke="#D6D6D6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footC">
+                <div class="sns">
+                    <ul>
+                        <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M18.002 13.385C15.4481 13.385 13.3881 15.4455 13.3881 18C13.3881 20.5545 15.4481 22.615 18.002 22.615C20.5559 22.615 22.616 20.5545 22.616 18C22.616 15.4455 20.5559 13.385 18.002 13.385ZM18.002 21.0003C16.3516 21.0003 15.0023 19.6548 15.0023 18C15.0023 16.3452 16.3476 14.9997 18.002 14.9997C19.6564 14.9997 21.0017 16.3452 21.0017 18C21.0017 19.6548 19.6524 21.0003 18.002 21.0003ZM23.8809 13.1963C23.8809 13.7947 23.399 14.2727 22.8047 14.2727C22.2064 14.2727 21.7285 13.7907 21.7285 13.1963C21.7285 12.6018 22.2104 12.1198 22.8047 12.1198C23.399 12.1198 23.8809 12.6018 23.8809 13.1963ZM26.9368 14.2887C26.8685 12.8468 26.5392 11.5696 25.4831 10.5172C24.431 9.46491 23.154 9.13556 21.7124 9.06326C20.2267 8.97891 15.7733 8.97891 14.2876 9.06326C12.85 9.13154 11.573 9.46089 10.5169 10.5132C9.46079 11.5655 9.13553 12.8428 9.06325 14.2847C8.97892 15.7708 8.97892 20.2251 9.06325 21.7113C9.13151 23.1532 9.46079 24.4304 10.5169 25.4828C11.573 26.5351 12.846 26.8644 14.2876 26.9367C15.7733 27.0211 20.2267 27.0211 21.7124 26.9367C23.154 26.8685 24.431 26.5391 25.4831 25.4828C26.5352 24.4304 26.8645 23.1532 26.9368 21.7113C27.0211 20.2251 27.0211 15.7749 26.9368 14.2887ZM25.0173 23.3058C24.7041 24.093 24.0977 24.6995 23.3066 25.0168C22.122 25.4868 19.3111 25.3783 18.002 25.3783C16.6929 25.3783 13.878 25.4828 12.6974 25.0168C11.9103 24.7036 11.304 24.0971 10.9867 23.3058C10.5169 22.1209 10.6253 19.3094 10.6253 18C10.6253 16.6906 10.5209 13.875 10.9867 12.6942C11.2999 11.907 11.9063 11.3005 12.6974 10.9832C13.882 10.5132 16.6929 10.6217 18.002 10.6217C19.3111 10.6217 22.126 10.5172 23.3066 10.9832C24.0937 11.2964 24.7001 11.9029 25.0173 12.6942C25.4871 13.8791 25.3787 16.6906 25.3787 18C25.3787 19.3094 25.4871 22.125 25.0173 23.3058Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M29.2084 12.6078C28.9358 11.5813 28.1326 10.7729 27.1128 10.4985C25.2642 10 17.8519 10 17.8519 10C17.8519 10 10.4395 10 8.59097 10.4985C7.57114 10.7729 6.76793 11.5813 6.49531 12.6078C6 14.4683 6 18.3502 6 18.3502C6 18.3502 6 22.232 6.49531 24.0926C6.76793 25.1191 7.57114 25.8938 8.59097 26.1681C10.4395 26.6667 17.8519 26.6667 17.8519 26.6667C17.8519 26.6667 25.2642 26.6667 27.1128 26.1681C28.1326 25.8938 28.9358 25.1191 29.2084 24.0926C29.7037 22.232 29.7037 18.3502 29.7037 18.3502C29.7037 18.3502 29.7037 14.4683 29.2084 12.6078ZM15.4276 21.8746V14.8257L21.6229 18.3503L15.4276 21.8746Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M22.3447 18.6875L22.8632 15.2489H19.621V13.0176C19.621 12.0768 20.0739 11.1599 21.526 11.1599H23V8.2323C23 8.2323 21.6624 8 20.3835 8C17.7134 8 15.9681 9.64691 15.9681 12.6283V15.2489H13V18.6875H15.9681V27H19.621V18.6875H22.3447Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">ⓒ 2021 MINT PAPER ALL Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

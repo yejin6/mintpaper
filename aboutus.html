@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINT PAPER</title>
+    <link rel="favicon" href="./favicon.ico">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --main-color: #00E5A7;
+            --bg-color: #000;
+
+            --bright-color-01: #fff;
+            --bright-color-02: #DADADA;
+            --bright-color-03: #B7B7B7;
+            --caption: #B7B7B7;
+
+            --stroke-01: #767676;
+            --stroke-02: #343434; 
+
+            --width-per: 67%;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Pretendard Variable';
+            background-color: var(--bg-color);
+            position: absolute;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        /*-------header-------*/
+        
+            .nav-wrap{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                position: fixed;
+                z-index: 100;
+            }
+                .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: var(--width-per);
+                    height: 60px;
+                }
+                    .logo{
+                        display: flex;
+                        flex: 1;
+                    }
+                        .logo a{
+                            height: 20px;
+                        }
+                    .navbar-menu{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                        .navbar-item{
+                            padding: 12px 10px;
+                        }
+                        .navbar-menu a{
+                            color: var(--bright-color-01);
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    .utility{
+                        display: flex;
+                        flex: 1;                    
+                        justify-content: flex-end;
+                        padding: 0;
+                    }
+                        .search-btn{
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+
+        /*-------conA-------*/
+        .conA{
+            width: var(--width-per);
+            height: 600px;
+            margin: 84px auto 20px;
+        }
+        .conA .container{
+            background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0.3)50%,
+                    rgba(0, 0, 0, 1)
+                    ), 
+                    linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 1),
+                    rgba(0, 0, 0, 0.3)50%,
+                    rgba(0, 0, 0, 1)
+                    ), 
+                    url(img/aboutus/bg.jpg);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+        }
+        .breadcrumb{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 4px;
+            margin-bottom: 160px;
+        }
+        .breadcrumb a, p{
+            color: var(--bright-color-03, #B7B7B7);
+            font-size: 14px;
+            line-height: 20px; /* 142.857% */
+        }
+        h2{
+            color: var(--bright-color-01, #FFF);
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.9px;
+            margin-bottom: 10px;
+        }
+        .container .sub{
+            color: var(--bright-color-01, #FFF);
+            font-size: 20px;
+            letter-spacing: -0.5px;
+            margin-bottom: 60px;
+        }
+        .container .sub2{
+            color: var(--bright-color-01, #FFF);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: -0.4px;
+            margin-bottom: 20px;
+        }
+        .container .sub3{
+            color: var(--bright-color-02, #DADADA);
+            font-size: 16px;
+            line-height: 24px; /* 150% */
+            letter-spacing: -0.4px;
+        }
+
+        /*-------conB-------*/
+        .conB{
+            width: var(--width-per);
+            display: flex;
+            gap: 50px;
+            margin: 20px auto 140px;
+        }
+        .conB-cont{
+            border-top: 1px solid var(--bright-color-01, #FFF);
+            padding: 10px 0;
+        }
+        .title{
+            color: var(--bright-color-01, #FFF);
+            font-size: 16px;
+            letter-spacing: -0.4px;
+            margin-bottom: 20px;
+        }
+        .sub{
+            color: var(--bright-color-03, #B7B7B7);
+            font-size: 16px;
+            line-height: 24px; /* 150% */
+            letter-spacing: -0.4px;
+            align-self: stretch;
+        }
+
+        /*-------conC-------*/
+        .conC{
+            width: var(--width-per);
+            margin: 0 auto 160px;
+        }
+        h3{
+            color: var(--bright-color-01, #FFF);
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.9px;
+        }
+        .conC li:not(:last-child){
+            border-bottom: 1px solid var(--stroke-02, #343434);
+        }
+        dl{
+            display: flex;
+            height: 100px;
+            /* padding: 18px 0; */
+            align-items: center;
+        }
+            .history-year{
+                color: var(--bright-color-01, #FFF);
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: -0.5px;
+                width: 100px;
+            }
+            .history-month{
+                color: var(--bright-color-01, #FFF);
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.4px;
+                width: 60px;
+            }
+            .history-text{
+                color: var(--bright-color-02, #DADADA);
+                font-size: 16px;
+                letter-spacing: -0.4px;
+                overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+            }
+
+           /*-----------------------------------media---------------------------------*/
+        @media (min-width: 768px) {/*-----------큰화면전용-----------*/
+                /*-------header-------*/
+                .nav-mobile{
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+
+                /*-------conA-------*/
+                .conA{
+                    width: 90%;
+                    height: 420px;
+                    margin: 100px auto 80px;
+                }
+                .breadcrumb{
+                    display: none;
+                }
+                .conA .sub3{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                }
+
+                /*-------conB-------*/
+                .conB{
+                    width: 90%;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 0 10px;
+                }
+                .title{
+                    margin-bottom: 14px;
+                }
+
+                /*-------conC-------*/
+                .conC{
+                    width: 90%;
+                }
+                    h3{
+                        font-size: 32px;
+                        letter-spacing: -0.8px;
+                    }
+                    .history-year{
+                        font-size: 18px;
+                        letter-spacing: -0.45px;
+                    }
+                    .history-month{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+                    .history-text{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+
+            }
+
+            @media (max-width: 429.9px) {/*-----------420px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+
+                /*-------conA-------*/
+                .conA{
+                    width: 90%;
+                    height: 320px;
+                    margin: 110px auto 80px;
+                }
+                .breadcrumb{
+                    display: none;
+                }
+                .conA .sub3{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                }
+
+                /*-------conB-------*/
+                .conB{
+                    width: 90%;
+                    margin: 0 auto 80px;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 20px;
+                    padding: 0 10px;
+                    margin-top: 80px;
+                    display: flex;
+                }
+                .title{
+                    margin-bottom: 14px;
+                }
+
+                /*-------conC-------*/
+                .conC{
+                    width: 90%;
+                }
+                    h3{
+                        font-size: 28px;
+                        letter-spacing: -0.7px;
+                    }
+                    .history-year{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                        width: 80px;
+                    }
+                    .history-month{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                        width: 60px;
+                    }
+                    .history-text{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+            }
+    </style>
+</head>
+<body>
+     <!-- header -->
+    <header>
+        <div class="container">
+            <div class="nav-wrap">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                    </div>
+                    <div class="nav-content">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="">About us</a></li>
+                            <li class="navbar-item"><a href="">Festival</a></li>
+                            <li class="navbar-item"><a href="">Project</a></li>
+                            <li class="navbar-item"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="nav-mobile">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                    </button>
+
+                    <div class="utility">
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+     <!-- conA -->
+     <section class="conA">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="">home</a>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M4.5 9L7.5 6L4.5 3" stroke="#767676" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg></span>
+                <p>About us</p>
+            </div>
+            <h2>Mint Paper</h2>
+            <p class="sub">두꺼운 챕터를 정리하고, 미지의 페이지에 써 내려갑니다</p>
+            <p class="sub2">민트페이퍼는 대중 음악 시장과 공연 문화를 주도하면서, 음악과 관련된 토탈 비즈니스를 진행해 온 기업입니다.</p>
+            <p class="sub3">데이브레이크, 소란, 쏜애플, 설 등을 비롯한 밴드와 싱어송라이터 씬을 대표하는 여러 뮤지션들이 소속되어 있고,
+               10년 이상 장수하고 있는 국내의 대표적인 음악 페스티벌인 ‘그랜드 민트 페스티벌’, ‘뷰티풀 민트 라이프’, ‘해브 어 나이스 데이’ 등을 비롯한 음악 페스티벌과 연간 100여회 이상의 콘서트를 성공적으로 주최해 왔습니다.
+               또한 수 많은 파트너와의 협업, 제휴를 통해 성공적인 문화 마케팅을 수행해 왔으며, 한국음악레이블산업협회,
+               한국대중음악공연산업협회의 파운더로서 활동하면서 레이블, 아티스트, 커뮤니티, 이해 관계자들과 협업하며,
+               문화 산업의 꾸준한 성장과 관계 종사자들의 권익 향상을 위해 노력하고 있습니다.</p>
+        </div>
+    </section>
+
+     <!-- conB -->
+     <section class="conB">
+        <div class="conB-cont">
+            <p class="title">Festival</p>
+            <p class="sub">민트페이퍼는 페스티벌 브랜드의 아이덴티티를 강화하고, 자체 팀을 구성하여 내부 브랜드와 외부 기업과의 협업을 확대하며, 한국 페스티벌을 원조의 모습으로 다시 정립하고자 합니다.</p>
+        </div>
+        <div class="conB-cont">
+            <p class="title">Contents</p>
+            <p class="sub">민트페이퍼는 다양하고 따뜻한 콘텐츠로 변화하고 있습니다. 수년간 축적된 자료와 특별한 영상, 새로운 오리지널 콘텐츠를 제공하며 기존 음악 방향성을 유지하되, 외부 채널과의 협업 및 새 분야 확장을 고려합니다. 'Next Pattern' 캠페인으로 TV 프로그램도 준비 중이며, 업계 소식과 프로젝트에도 주목할 예정입니다.</p>
+        </div>
+        <div class="conB-cont">
+            <p class="title">Commerce</p>
+            <p class="sub">'민트페이퍼샵'은 특별하고 독창적인 아이템으로, 젊은 예술가들의 작품을 주로 선보이며, 사람들의 개성을 존중하는 곳입니다. 젊은 예술가들과 함께 성장하며 민트페이퍼 팀의 다양한 관심사를 반영한 상품과 콘텐츠를 제공합니다.</p>
+        </div>
+     </section>
+
+     <!-- conC -->
+     <section class="conC">
+        <h3>History</h3>
+
+        <ul class="content-box">
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2023</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">10월</dt>
+                            <dd class="history-text"><p>문화 커뮤니티 ‘민트페이퍼’ 런칭</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2022</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month"></dt>
+                            <dd class="history-text"><p></p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2021</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month"></dt>
+                            <dd class="history-text"><p></p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2016</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">04월</dt>
+                            <dd class="history-text"><p>Grand Mint Festival 2016 - 10th Anniversary 개최</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2015</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">05월</dt>
+                            <dd class="history-text"><p>Beautiful Mint Life 2015 개최</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2013</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">10월</dt>
+                            <dd class="history-text"><p>민트페이퍼 컴필레이션 앨범 [Bright #1] 발매</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2010</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">05월</dt>
+                            <dd class="history-text"><p>Beautiful Mint Life 첫 개최</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2007</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">10월</dt>
+                            <dd class="history-text"><p>그랜드 민트 페스티벌 첫 개최</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+            <li class="history-box">
+                <dl>
+                    <dt class="history-year">2006</dt>
+                    <dd class="history-explain">
+                        <dl>
+                            <dt class="history-month">04월</dt>
+                            <dd class="history-text"><p>문화 커뮤니티 ‘민트페이퍼’ 런칭</p></dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+     </section>
+
+     <!-- footer -->
+</body>
+</html>

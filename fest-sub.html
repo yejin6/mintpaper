@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINT PAPER</title>
+    <link rel="favicon" href="./favicon.ico">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --main-color: #00E5A7;
+            --bg-color: #000;
+
+            --bright-color-01: #fff;
+            --bright-color-02: #DADADA;
+            --bright-color-03: #B7B7B7;
+            --caption: #B7B7B7;
+
+            --stroke-01: #767676;
+            --stroke-02: #343434; 
+
+            --width-per: 67%;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {/*앵커 부드럽게*/
+        scroll-behavior: smooth;
+        }
+        body{
+            font-family: 'Pretendard Variable';
+            background-color: var(--bg-color);
+            position: absolute;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+
+        #top-btn{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            padding: 13px;
+            border: solid 1px var(--bright-color-01);
+            border-radius: 100px;
+            position: fixed;
+            top: 90vh;
+            right: 50px;
+            z-index: 1000;
+        }
+        h3{
+            color: var(--bright-color-01, #FFF);
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -0.9px;
+            margin-bottom: 40px;
+        }
+        /*-------header-------*/
+        .nav-wrap{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                position: fixed;
+                z-index: 100;
+            }
+                .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: var(--width-per);
+                    height: 60px;
+                }
+        /* 스크롤 시 배경색 변경 */
+        .scrolled {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            border-bottom: solid 1px var(--bright-color-01);
+        }
+        /* 가짜 콘텐츠 */
+        .content {
+        height: 2000px; /* 스크롤을 위한 가짜 콘텐츠 높이 */
+        }
+                    .logo{
+                        display: flex;
+                        flex: 1;
+                    }
+                        .logo a{
+                            height: 20px;
+                        }
+                    .navbar-menu{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                        .navbar-item{
+                            padding: 12px 10px;
+                        }
+                        .navbar-menu a{
+                            color: var(--bright-color-01);
+                            font-size: 15px;
+                            font-weight: 400;
+                        }
+                    .utility{
+                        display: flex;
+                        flex: 1;                    
+                        justify-content: flex-end;
+                        padding: 0;
+                    }
+                        .search-btn{
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                        }
+        .hero{
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 1),
+                rgba(0, 0, 0, 0)50%,
+                rgba(0, 0, 0, 1)
+                ), 
+                url(img/fest-sub/hero.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 450px;
+        }
+            .hero-txt{
+                padding-top: 250px;
+                text-align: center;
+            }
+            h2{
+                color: var(--bright-color-01, #FFF);
+                font-size: 48px;
+                font-weight: 700;
+                margin-bottom: 16px;
+            }
+            .hero-txt p{
+                color: var(--bright-color-01, #FFF);
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 20px; /* 111.111% */
+                letter-spacing: -0.45px;
+            }
+
+
+        /*-------conA-------*/
+        .conA{
+            width: var(--width-per);
+            margin: 30px auto 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .conA a{
+            display: block;
+            width: 100%;
+        }
+            .year ul{
+                display: flex;
+                gap: 80px;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 60px;
+            }
+            .year li{
+                width: 100px;
+                text-align: center;
+            }
+            .year a{
+                color: var(--caption, #B5B5B5);
+                text-align: center;
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .year li:nth-child(3) a{
+                color: var(--main-color, #00E5A7);
+                text-align: center;
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            .menu ul{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 60px;
+                border: 1px solid var(--bright-color-01, #FFF);
+            }
+            .menu li{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .menu a{
+                color: var(--bright-color-01, #FFF);
+                text-align: center;
+                font-size: 24px;
+            }
+            .menu li:hover{
+                background: rgba(255, 255, 255, 0.20);
+            }
+
+        /*-------conB-------*/
+        #conB{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .conB-cont{
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: end;
+        }
+            #conB .photo{
+                background-image: url(img/fest-sub/info.jpg);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            
+                width: 365px;
+                height: 530px; /*-----수정하기-----*/
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                width: 50%;
+            }
+            .info-icon{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+            .info-icon p{
+                color: var(--bright-color-01, #FFF);
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: -0.45px;
+            }
+            .date, .loca{
+                display: flex;
+                gap: 10px;
+            }
+            #conB .long{
+                color: var(--caption, #B5B5B5);
+                font-size: 16px;
+                line-height: 24px; /* 150% */
+                letter-spacing: -0.4px;
+                text-align: justify;
+            }
+
+
+        /*-------conC-------*/
+        #conC{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            #conC .video{
+                display: flex;
+                flex-direction: column;
+            }
+            .main{
+                background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+                 ,url(img/fest-sub/contets-main.jpg);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 0 60px;
+                /* width: 100%; */
+                /* height: 600px; */
+                aspect-ratio: 16 / 8;
+            }
+            .main p:nth-child(1){
+                color: var(--bright-color-01, #FFF);
+                font-size: 16px;
+                letter-spacing: -0.4px;
+            }
+            .main p:nth-child(2){
+                color: var(--bright-color-01, #FFF);
+                font-size: 44px;
+                font-weight: 700;
+                letter-spacing: -1.1px;
+                margin: 30px 0 10px;
+            }
+            .main p:nth-child(3){
+                color: var(--bright-color-01, #FFF);
+                font-size: 18px;
+                letter-spacing: -0.45px;
+            }
+            #conC button{
+                background-color: rgba(255, 255, 255, 0.20);
+                backdrop-filter: blur(2px);
+                border: none;
+                cursor: pointer;
+                width: 60px;
+                height: 60px;
+                padding-left: 4px;
+                border-radius: 50%;
+                border: 1px solid var(--bright-color-01, #fff);
+                margin-top: 60px;
+            }
+            #conC button:hover{
+                background-color: rgba(255, 255, 255, 0.4);
+                
+            }
+            .sub{
+                display: flex;
+                width: 100%;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .sub a{
+                display: inline-block;
+                width: 100%;
+            }
+                .sub1{
+                    background-image: url(img/fest-sub/contents01.jpg);
+                    background-size: 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    aspect-ratio: 16 / 8;
+                    transition: all 0.2s ease-in;
+                }
+                .sub2{
+                    background-image: url(img/fest-sub/contents02.jpg);
+                    background-size: 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    aspect-ratio: 16 / 8;
+                    
+                    transition: all 0.2s ease-in;
+                }
+                .sub3{
+                    background-image: url(img/fest-sub/contents03.jpg);
+                    background-size: 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    aspect-ratio: 16 / 8;
+                    
+                    transition: all 0.2s ease-in;
+                }
+                .sub4{
+                    background-image: url(img/fest-sub/contents04.jpg);
+                    background-size: 100%;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    aspect-ratio: 16 / 8;
+                    
+                    transition: all 0.2s ease-in;
+                }
+
+        .sub1:hover{
+            background-size: 105%;
+        }
+        .sub2:hover{
+            background-size: 105%;
+        }
+        .sub3:hover{
+            background-size: 105%;
+        }
+        .sub4:hover{
+            background-size: 105%;
+        }
+
+
+        /*-------conD-------*/
+        #conD{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+        .gallery a{
+            display: flex;
+            width: 24%;
+            aspect-ratio: 1 / 1;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /*img*/
+            #img01{
+                background-image: url(img/fest-sub/gallery01.jpg);
+            }
+            #img02{
+                background-image: url(img/fest-sub/gallery02.jpg);
+            }
+            #img03{
+                background-image: url(img/fest-sub/gallery03.jpg);
+            }
+            #img04{
+                background-image: url(img/fest-sub/gallery04.jpg);
+            }
+            #img05{
+                background-image: url(img/fest-sub/gallery05.jpg);
+            }
+            #img06{
+                background-image: url(img/fest-sub/gallery06.jpg);
+            }
+            #img07{
+                background-image: url(img/fest-sub/gallery07.jpg);
+            }
+            #img08{
+                background-image: url(img/fest-sub/gallery08.jpg);
+            }
+            #img09{
+                background-image: url(img/fest-sub/gallery09.jpg);
+            }
+            #img10{
+                background-image: url(img/fest-sub/gallery10.jpg);
+            }
+            #img11{
+                background-image: url(img/fest-sub/gallery11.jpg);
+            }
+            #img12{
+                background-image: url(img/fest-sub/gallery12.jpg);
+            }
+
+            .img-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                width: 100%;
+                height: 100%;
+                padding: 6%;
+                opacity: 0;
+                transition: all 0.2s ease-in;
+            }
+            #conD .name{
+                color: var(--bright-color-01, #FFF);
+                font-size: 24px;
+                font-weight: 700;
+            }
+            #conD .date{
+                color: var(--bright-color-02, #DADADA);
+                font-size: 16px;
+            }
+            
+            .gallery a:hover .img-info{
+                opacity: 1;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 229, 167, 0.50) 100%);
+            }
+            
+            
+        /*-------conE-------*/
+        #conE{
+            width: var(--width-per);
+            margin: 0 auto 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+            th{
+                padding: 16px 10px;
+                color: var(--bright-color-01, #FFF);
+                font-size: 20px;
+                font-weight: 400;
+                letter-spacing: -0.5px;
+            }
+            th:not(:nth-child(2)){
+                text-align: center;
+            }
+            td{
+                color: var(--bright-color-01, #FFF);
+                font-size: 16px;
+                font-weight: 300;
+                letter-spacing: -0.4px;
+            }
+            tr td:not(:nth-child(2)){
+                text-align: center;
+            }
+            th:nth-child(1){
+                width: 12%;
+            }
+            td{
+                padding: 16px 10px;
+            }
+            tr:not(:last-child){
+                border-bottom: 1px solid var(--stroke-02, #343434);
+            }
+        /*-----------------------------------media---------------------------------*/
+        @media (min-width: 768px) {/*-----------큰화면전용-----------*/
+                /*-------header-------*/
+                .nav-mobile{
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+                h3{
+                    font-size: 32px;
+                    letter-spacing: -0.8px;
+                }
+                /*-------conA-------*/
+                .conA{
+                    width: 90%;
+                    margin: 30px auto 100px;
+                }
+                    .year ul{
+                        gap: 40px;
+                        margin-bottom: 40px;
+                    }
+                    .year a{
+                        font-size: 16px;
+                    }
+                    .year li:nth-child(3) a{
+                        font-size: 24px;
+                    }
+                    .menu a{
+                        font-size: 18px;
+                    }
+                /*-------conB-------*/
+                #conB{
+                    width: 90%;
+                    margin: 0 auto 160px;
+                }
+                    #conB .photo{
+                        width: 335px;
+                        height: 474px; /*-----수정하기-----*/
+                    }
+                    .info-icon p{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                    #conB .long{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+
+                /*-------conC-------*/
+                #conC{
+                    width: 90%;
+                    margin: 0 auto 160px;
+                }
+                    .main{
+                        padding: 0 30px;
+                    }
+                    .main p:nth-child(1){
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+                    .main p:nth-child(2){
+                        font-size: 28px;
+                        letter-spacing: -0.7px;
+                    }
+                    .main p:nth-child(3){
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                
+                /*-------conD-------*/
+                #conD{
+                    width: 90%;
+                    margin: 0 auto 160px;
+                }
+                .gallery a{
+                    width: 49%;
+                }
+
+                /*-------conE-------*/
+                #conE{
+                    width: 90%;
+                    margin: 0 auto 160px;
+                }
+            }
+
+            @media (max-width: 429.9px) {/*-----------420px전용-----------*/
+                /*-------header-------*/
+                .navbar{
+                    width: 90%;
+                }
+                .nav-mobile{
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background: none;
+                    cursor: pointer;
+                    order: 1;
+                    flex: 1;
+                    text-align: left;
+                }
+                .nav-content{
+                    display: none;
+                }
+                .logo{
+                    order: 2;
+                    display: block;
+                    text-align: center;
+                }
+                .utility{
+                    order: 3;
+                    flex: 1;
+                }
+                    .hero-txt{
+                        padding-top: 210px;
+                    }
+                    h2{
+                        font-size: 36px;
+                        margin-bottom: 14px;
+                    }
+                    .hero-txt p{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                /*-------conA-------*/
+                .conA{
+                    width: 90%;
+                    margin: 28px auto 80px;
+                }
+                    .year ul{
+                        gap: 40px;
+                        margin-bottom: 40px;
+                    }
+                    .year a{
+                        font-size: 18px;
+                    }
+                    .year li:nth-child(3) a{
+                        font-size: 24px;
+                    }
+                    .menu a{
+                        font-size: 16px;
+                    }
+                    .non-420{
+                        display: none;
+                    }
+                /*-------conB-------*/
+                #conB{
+                    width: 90%;
+                    margin: 0 auto 80px;
+                }
+                    .conB-cont{
+                        flex-direction: column;
+                    }
+                    #conB .info{
+                        width: 100%;
+                    }
+                    #conB .photo{
+                        width: 100%;
+                        height: 474px; /*-----수정하기-----*/
+                    }
+                    .info-icon p{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                    #conB .long{
+                        font-size: 14px;
+                        letter-spacing: -0.35px;
+                    }
+
+                /*-------conC-------*/
+                #conC{
+                    width: 90%;
+                    margin: 0 auto 80px;
+                }
+                    .main{
+                        padding: 0 10px;
+                    }
+                    .main p:nth-child(1){
+                        font-size: 12px;
+                        letter-spacing: -0.3px;
+                    }
+                    .main p:nth-child(2){
+                        font-size: 20px;
+                        letter-spacing: -0.5px;
+                        margin: 12px 0 4px;
+                    }
+                    .main p:nth-child(3){
+                        font-size: 12px;
+                        letter-spacing: -0.3px;
+                    }
+                    #conC button{
+                        width: 36px;
+                        height: 36px;
+                        margin-top: 30px;
+            }
+                
+                /*-------conD-------*/
+                #conD{
+                    width: 90%;
+                    margin: 0 auto 80px;
+                }
+                .gallery a{
+                    width: 48%;
+                }
+
+                /*-------conE-------*/
+                #conE{
+                    width: 90%;
+                    margin: 0 auto 100px;
+                }
+                th{
+                    font-size: 16px;
+                    letter-spacing: -0.4px;
+                }
+                td{
+                    font-size: 14px;
+                    letter-spacing: -0.35px;
+                }
+                th:nth-child(1){
+                    width: 15%;
+                }
+            }
+            
+    </style>
+
+    <script>
+        // JavaScript를 사용하여 스크롤 이벤트를 처리합니다.
+        window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 0) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        });
+
+        // 앵커를 클릭했을 때 부드러운 스크롤 이벤트 설정
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    // 부드러운 스크롤 효과 적용 (예시: 800ms 동안 스크롤)
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
+    </script>
+</head>
+<body>
+    <a href="#" id="top-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+    </a>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="nav-wrap" id="navbar">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                    </div>
+                    <div class="nav-content">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item"><a href="">About us</a></li>
+                            <li class="navbar-item"><a href="">Festival</a></li>
+                            <li class="navbar-item"><a href="">Project</a></li>
+                            <li class="navbar-item"><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="nav-mobile">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                    </button>
+
+                    <div class="utility">
+                        <button class="search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero">
+                <div class="hero-txt">
+                    <h2>Grand Mint Festival</h2>
+                    <p>도시적인 세련됨과 청량함의 여유, 환경과 사람 사이의 조화</p>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+     <!-- conA -->
+     <section class="conA">
+        <div class="year">
+            <ul>
+                <li class="non-420"><a href="">2021</a></li>
+                <li><a href="">2022</a></li>
+                <li><a href="">2023</a></li>
+                <li><a href="">2024</a></li>
+                <li class="non-420"><a href="">2025</a></li>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="#conB">INFO</a></li>
+                <li><a href="#conC">CONTENTS</a></li>
+                <li><a href="#conD">GALLERY</a></li>
+                <li><a href="#conE">NOTICE</a></li>
+            </ul>
+        </div>
+     </section>
+
+     <!-- conB -->
+     <section id="conB">
+        <h3>Info</h3>
+            <div class="conB-cont">
+            <div class="photo"></div>
+            <div class="info">
+                <div class="info-icon">
+                    <div class="date">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M21.2 10H3.5M16.2 2V6M8.2 2V6M8.3 22H16.7C18.3802 22 19.2202 22 19.862 21.673C20.4265 21.3854 20.8854 20.9265 21.173 20.362C21.2 19.7202 21.2 18.8802 21.2 17.2V8.8C21.2 7.11984 21.2 6.27976 21.173 2.63803C20.8854 2.07354 20.4265 4.6146 19.862 4.32698C19.2202 4 18.3802 4 16.7 4H8.3C6.61984 4 2.77976 4 2.13803 4.32698C4.57354 4.6146 4.1146 2.07354 3.82698 2.63803C3.2 6.27976 3.2 7.11984 3.2 8.8V17.2C3.2 18.8802 3.2 19.7202 3.82698 20.362C4.1146 20.9265 4.57354 21.3854 2.13803 21.673C5.77976 22 6.61984 22 8.3 22Z" stroke="#B7B7B7" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                        <p>2023.10.20(FRI) - 2023.10.22(SUN)</p>
+                    </div>
+                    <div class="loca">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path d="M12.2 13C14.1569 13 15.2 11.6569 15.2 10C15.2 8.34315 14.1569 7 12.2 7C10.8431 7 9.2 8.34315 9.2 10C9.2 11.6569 10.8431 13 12.2 13Z" stroke="#B7B7B7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.2 22C16.2 18 20.2 14.4183 20.2 10C20.2.58172 16.9183 2 12.2 2C8.08172 2 4.2.58172 4.2 10C4.2 14.4183 8.2 18 12.2 22Z" stroke="#B7B7B7" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg></span>
+                        <p>올림픽공원</p>
+                    </div>
+                </div>
+                <p class="long">
+                    저희가 진행하는 모든 페스티벌 하나하나 소중하지 않은 것이 
+                    없겠지만, 그럼에도 불구하고 가장 중요한 페스티벌이라고 하면 
+                    그랜드 민트 페스티벌을 뽑지 않을 수 없습니다. 바로 민트페이퍼의
+                     근간이며, 지난 16년간 꾸준히 많은 분들과 올림픽 공원에서 만나며
+                      나눈 시간들로 가득 찬 소중한 페스티벌이기 때문입니다. 그런 긴 
+                      세월 이어져온 페스티벌이기에 지금까지 지켜온 저희의 전통과 그 
+                      사이에서 보여드릴 수 있는 또 다른 새로운 모습을 위하여 저희 
+                      GMF 스태프들 모두 많은 고민과 한편으로는 어쩌면 기대감이라는 
+                      양면적인 감정 속에서 관객분들을 맞이할 준비를 하고 있습니다. 
+                      벌써 17번째 관객과의 만남을 준비하며, ‘한 해의 마지막 야외 
+                      음악 페스티벌’이자 ‘가을의 정취’가 물씬 느껴지는 특유의 감성을 
+                      위하여 기존의 이틀에서 하루를 더 추가하여 ‘Special Night’과 
+                      어디에서도 볼 수 없었던 특별한 아티스트를 만날 수 있는 
+                      ‘The Moment of You’, 그리고 지난 몇 년 간 스테이지 2개의 
+                      아쉬움을 떨치기 위하여 한곳이 추가된 총 3개의 스테이지를 통하여
+                       ‘가을=GMF’라는 의미를 다시 한번 더 보여드릴 수 있도록 열심히
+                        준비해 보겠습니다. 도시적인 세련됨과 청량함의 여유, 환경과 
+                        사람 사이의 조화, 민트페이퍼의 1년 결산.10월의 정점에서 
+                        시작하여 이듬해 같은 시즌으로 마감되는 남들과 다른 계절의
+                         리듬.기분 좋은 증후군이자 데자뷔, 가을의 남은 온기와 
+                         색깔까지 배경이 되는 삼일간의 현상.
+                    <strong>그랜드 민트 페스티벌의 17번째 여행을 시작합니다.</strong>
+                </p>
+            </div>
+        </div>
+        </div>
+     </section>
+
+     <!-- conC -->
+     <section id="conC">
+        <h3>Contents</h3>
+        <div class="video">
+            <div class="main">
+                <a href="">
+                    <div class="title">
+                        <p>Highlit Video</p>
+                        <p>그랜드 민트 페스티벌 2023 하이라이트</p>
+                        <p>10월, Grand Mint Festival과 함께 가을을 물들인 42팀의 아티스트</p>
+                    </div>
+                    <button><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M5 2.48963C5 4.51847 2 4.03289 2.20249 3.76522C5.37889 3.53203 2.64852 3.38773 2.9404 3.3703C6.27544 3.3503 6.67946 3.61965 7.48752 4.15835L18.0031 11.1687C18.6708 11.6139 19.0046 11.8364 19.1209 12.1169C19.2227 12.3622 19.2227 12.6378 19.1209 12.8831C19.0046 13.1636 18.6708 13.3862 18.0031 13.8313L7.48752 20.8417C6.67946 21.3804 6.27544 21.6497 2.9404 21.6297C5.64852 21.6123 2.37889 21.468 2.20249 21.2348C5 20.9671 2 20.4815 2 19.5104V5.48963Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg></a></button>
+                </a>
+            </div>
+            <div class="sub">
+                <a href=""><div class="sub1"></div></a>
+                <a href=""><div class="sub2"></div></a>
+                <a href=""><div class="sub3"></div></a>
+                <a href=""><div class="sub4"></div></a>
+            </div>
+        </div>
+     </section>
+
+     <!-- conD -->
+     <section id="conD">
+        <h3>Gallery</h3>
+        <div class="gallery">
+                <a id="img01" href="">
+                    <div class="img-info">
+                        <div class="name">N.Flying</div>
+                        <div class="date">2023.11.02</div>
+                    </div>
+                </a>
+            
+                <a id="img02" href="">
+                    <div class="img-info">
+                        <div class="name">쏜애플</div>
+                        <div class="date">2023.11.02</div>
+                    </div>
+                </a>
+            
+                <a id="img03" href="">
+                    <div class="img-info">
+                        <div class="name">하현상</div>
+                        <div class="date">2023.11.02</div>
+                    </div>
+                </a>
+            
+                <a id="img04" href="">
+                    <div class="img-info">
+                        <div class="name">오월오일</div>
+                        <div class="date">2023.11.02</div>
+                    </div>
+                </a>
+            
+                <a id="img05" href="">
+                    <div class="img-info">
+                        <div class="name">데이먼스 이어</div>
+                        <div class="date">2023.11.03</div>
+                    </div>
+                </a>
+            
+                <a id="img06" href="">
+                    <div class="img-info">
+                        <div class="name">LUCY</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img07" href="">
+                    <div class="img-info">
+                        <div class="name">터치드</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img08" href="">
+                    <div class="img-info">
+                        <div class="name">유다빈밴드</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img09" href="">
+                    <div class="img-info">
+                        <div class="name">실리카겔</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img10" href="">
+                    <div class="img-info">
+                        <div class="name">Lacuna</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img11" href="">
+                    <div class="img-info">
+                        <div class="name">한로로</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+                <a id="img12" href="">
+                    <div class="img-info">
+                        <div class="name">김필</div>
+                        <div class="date">2023.11.04</div>
+                    </div>
+                </a>
+            
+        </div>
+     </section>
+
+     <!-- conE -->
+     <section id="conE">
+        <h3>Notice</h3>
+        <table>
+          <thead style="padding: 16px 10px;">
+              <tr class="title">
+                  <th>번호</th>
+                  <th>제목</th>
+                  <th>등록일</th>
+              </tr>
+          </thead>
+
+          <tbody>
+            
+            <tr><a href=""></a>
+                <td>1</td>
+                <td>GMF2023 분실물 I 찾아주세요/찾아가세요</td>
+                <td>2023.10.24</td>
+            </a></tr>
+            
+            <tr>
+                <td>2</td>
+                <td>GMF2023 | 타임테이블, 페스티벌맵, 안내사항 (231004ver)</td>
+                <td>2023.10.04</td>
+            </tr>
+  
+            <tr>
+                <td>3</td>
+                <td>[그랜드 민트 페스티벌 2023 : Special Night 출연진 일부 취소 및 재예매 안내]</td>
+                <td>2023.10.04</td>
+            </tr>
+    
+            <tr>
+                <td>4</td>
+                <td>FAQ - 일반편 | GMF2023</td>
+                <td>2023.09.30</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>GMF2023 최종라인업</td>
+                <td>2023.09.13</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>FAQ - 티켓편 | GMF2023</td>
+                <td>2023.09.08</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>GMF2023 TICKET | 핵심안내사항, 예매상세, 입장 및 관람안내(23.08.08.ver)</td>
+                <td>2023.08.08</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>GMF2023:Special Night TICKET | 공지사항, 예매상세, 입장 및 관람안내(23.10.04.ver)</td>
+                <td>2023.08.08</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>GMF2023 개최발표</td>
+                <td>2023.07.26</td>
+            </tr>
+          </tbody>
+  
+      </table>
+     </section>
+</body>
+</html>
