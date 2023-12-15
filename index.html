@@ -7,8 +7,11 @@
     <link rel="favicon" href="./favicon.ico">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+    
+
     <style>
         :root{
             --main-color: #00E5A7;
@@ -64,6 +67,7 @@
             height: 60px;
             position: fixed;
             z-index: 100;
+            background-color: transparent;
         }
             .navbar{
                 display: flex;
@@ -76,9 +80,7 @@
 
         /* 스크롤 시 배경색 변경 */
         .scrolled {
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            border-bottom: solid 1px var(--bright-color-01);
+            background-color: var(--bg-color);
         }
         /* 가짜 콘텐츠 */
         .content {
@@ -253,6 +255,56 @@
         .conB{
             width: var(--width-per);
             margin: 0 auto 140px;
+            overflow: hidden;
+        }
+        .conB .top{
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 40px;
+        }
+        .next-btn{
+            display: flex;
+            gap: 20px;
+        }
+        .next-btn button{
+            cursor: pointer;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 1px solid var(--bright-color-01, #FFF);
+            width: 44px;
+            height: 44px;
+        }
+        .conB a{
+            display: block;
+            width: 100%;
+        }
+        .slide01{
+            width: 100%;
+            display: flex;
+            gap: 40px;
+        }
+        .conB .img{
+            min-height: 300px;
+            background-position: center;
+            background-size:100%;
+            background-repeat: no-repeat;
+            margin-bottom: 40px;
+            transition: all 0.2s ease-in;
+        }
+        .conB .title{
+            color: var(--bright-color-01, #FFF);
+            font-size: 150%;
+            font-weight: 500;
+            letter-spacing: -0.7px;
+        }
+        .conB .date{
+            color: var(--caption, #B5B5B5);
+            font-size: 100%;
+            letter-spacing: -0.4px;
+        }
+        .conB a:hover .img{
+            background-size: 102%;
         }
 
         /*-------conC-now on-------*/
@@ -277,14 +329,13 @@
                         aspect-ratio: 16/9;
                     }
                 .conC a{
+                    margin: 40px auto 0;
                     color: var(--bright-color-01, #FFF);
                     font-size: 16px;
                     font-weight: 500;
                     letter-spacing: -0.4px;
                     padding: 10px 20px;
-                    display: inline-block;
                     text-align: center;
-                    margin-top: 40px;
                     border: 1px solid var(--stroke-01, #767676);
                 }
 
@@ -331,14 +382,11 @@
                 width: 100%;
             }
             .conD .photo{
+                background-repeat: no-repeat;
                 background-position: center;
-                background-size: cover;
-            }   
-                .ph01{
-                    height: 600px;
-                    background-image: url(img/main/news01.jpg);
-                }
-                .ph02{
+                background-size: 150%;
+            }
+                /* .ph02{
                     height: 500px;
                 }
                 .ph03{
@@ -355,7 +403,7 @@
                 }
                 .ph08{
                     height: 270px;
-                }
+                } */
             .conD-cont-colu .info{
                 background-color: rgba(255, 255, 255, 0.1);
                 padding: 20px;
@@ -376,7 +424,7 @@
             }
 
             .conD a:hover .photo{
-                transform: scale(1.2);
+                transform: scale(110%);
             }
 
         /*-------conE-contect-------*/
@@ -488,6 +536,9 @@
 
             @media (max-width: 767.9px) and (min-width: 430px) {/*-----------768px전용-----------*/
                 /*-------header-------*/
+                .nav-wrap{
+                    background-color: var(--bg-color);
+                }
                 .navbar{
                     width: 90%;
                 }
@@ -501,10 +552,36 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
-                .logo{
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+                    .logo{
                     order: 2;
                     display: block;
                     text-align: center;
@@ -668,6 +745,9 @@
 
             @media (max-width: 429.9px) {/*-----------430px전용-----------*/
                 /*-------header-------*/
+                .nav-wrap{
+                    background-color: var(--bg-color);
+                }
                 .navbar{
                     width: 90%;
                 }
@@ -681,9 +761,35 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 .logo{
                     order: 2;
                     display: block;
@@ -711,6 +817,11 @@
             navbar.classList.remove('scrolled');
         }
         });
+
+        function toggleMenu() {
+        var navItems = document.getElementById("navItems");
+        navItems.classList.toggle("active");
+        }
     </script>
 
 
@@ -729,22 +840,21 @@
             <div class="nav-wrap" id="navbar">
                 <div class="navbar">
                     <div class="logo" >
-                        <a href="#"><img src="img/logo.png" alt="" height="20px"></a> 
+                        <a href="index.html"><img src="img/logo.png" alt="Mintpaper" height="20px"></a> 
                     </div>
-                    <div class="nav-content">
-                        <ul class="navbar-menu">
-                            <li class="navbar-item"><a href="aboutus.html">About us</a></li>
-                            <li class="navbar-item"><a href="fest-main.html">Festival</a></li>
-                            <li class="navbar-item"><a href="#">Project</a></li>
-                            <li class="navbar-item"><a href="connect.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <button type="button" class="nav-mobile">
+                    
+                    <div class="nav-mobile" onclick="toggleMenu()">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg></span>
-                    </button>
+                        </svg></span>
+                    </div>
+    
+                    <ul class="navbar-menu" id="navItems">
+                        <li class="navbar-item"><a href="index.html">About us</a></li>
+                        <li class="navbar-item current"><a href="fest-main.html">Festival</a></li>
+                        <li class="navbar-item"><a href="#">Project</a></li>
+                        <li class="navbar-item"><a href="connect.html">Contact</a></li>
+                    </ul>
 
                     <div class="utility">
                         <button class="search-btn">
@@ -763,7 +873,7 @@
                 <div class="hero-txt">
                     <h2>NEXT PATTERN</h2>
                     <p>두꺼운 챕터를 정리하고, 미지의 페이지에 써 내려갑니다</p>
-                    <a href="">자세히보기</a>
+                    <a href="aboutus.html">자세히보기</a>
                 </div>
             </div>
         </div>
@@ -801,10 +911,35 @@
 
     <!-- conB -->
     <section class="conB">
-        <h3>PROJECT</h3>
-        <p>민트페이퍼 만의 색이 담긴 시리즈</p>
+        <div class="top">
+            <div class="h3-title">
+                <h3>PROJECT</h3>
+                <p>민트페이퍼 만의 색이 담긴 시리즈</p>
+            </div>
+            <div class="next-btn">
+                <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg></button>
+                  <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg></button>
+            </div>
+        </div>
         <div class="conB-cont">
-
+            <div class="slide01">
+                <a href="">
+                <div class="sli01-1">
+                    <div class="img" style="background-image: url(img/main/project01.jpg);"></div>
+                    <p class="title">'노리플라이, 정준일, 페퍼톤스'</p>
+                    <p class="date">2023.07.05</p>
+                </div></a>
+                <a href="">
+                    <div class="sli01-2">
+                        <div class="img"  style="background-image: url(img/main/project02.jpg);"></div>
+                        <p class="title">MVP Concert – 솔루션스</p>
+                        <p class="date">2023.02.13</p>
+                    </div></a>
+            </div>
         </div>
     </section>
 
@@ -832,7 +967,7 @@
             <div class="conD-cont-colu">
                 <article>
                     <a href="#">
-                        <div class="photo ph01" style="background-image: url(img/main/news01.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news01.jpg); height: 600px;"></div>
                         <div class="info">
                             <h5>CDF2023-2024 D-30을 맞이하며</h4>
                             <p class="sub-title">올해의 마지막 실내 페스티벌 카운트다운 판타지의 D글이 시작되었습니다! D글을 보시는 모든 분들이 따뜻한 연말과 멋진 새해를 맞길 바라며!</p>
@@ -842,7 +977,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo ph02" style="background-image: url(img/main/news02.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news02.jpg);"></div>
                         <div class="info">
                             <h5>GMF2023 Awards 결과 발표</h4>
                             <p class="sub-title">GMF2023 AWARDS 수상자는 11월 12일 민트페스타 vol. 71 EXPRESSION 현장 발표되었습니다. 다시 한번 현장에서 즐겁게 참여해주신 모든 관객 분들과 멋진 무대를 만들어주신 아티스트분들께 감사드립니다!</p>
@@ -855,7 +990,7 @@
             <div class="conD-cont-colu">
                 <article>
                     <a href="#">
-                        <div class="photo ph03" style="background-image: url(img/main/news03.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news03.jpg); height: 600px;"></div>
                         <div class="info">
                             <h5>78LIVE - MmmPaa(음파) 프로젝트</h4>
                             <p class="sub-title">한정된 시간 속 무한한 시도 ‘78LIVE’
@@ -866,7 +1001,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo ph04" style="background-image: url(img/main/news04.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news04.jpg);"></div>
                         <div class="info">
                             <h5>CDF 공연 종료시각 관련 안내 및 입장문</h4>
                             <p class="sub-title">CDF 공연 종료시각이 변경되었습니다. 해당 부분으로 인해 불편을 겪으신 모든 예매자분께 죄송하다는 말씀 전합니다.</p>
@@ -876,7 +1011,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo ph05" style="background-image: url(img/main/news05.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news05.jpg);"></div>
                         <div class="info">
                             <h5>[사진] 브라이트랩 | 10.21(sat)</h4>
                             <p class="sub-title">GMF2023 | 10.21(sat)</p>
@@ -889,7 +1024,7 @@
             <div class="conD-cont-colu">  
                 <article>
                     <a href="#">
-                        <div class="photo ph06" style="background-image: url(img/main/news06.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news06.jpg);"></div>
                         <div class="info">
                             <h5>A.N.D #40</h4>
                             <p class="sub-title">2015년 9월. 어렵지 않은, 부담 없이 즐길 수 있는 페스티벌을 표방하며 ‘Have A Nice Day’를 통해 3천여 관객과 처음 인사한 이후,이제 우리는 ‘Another Nice Day’를 통해 조금 더 자주, 가까이에서 인사를 나누고자 합니다.</p>
@@ -899,7 +1034,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo ph07" style="background-image: url(img/main/news07.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news07.jpg);"></div>
                         <div class="info">
                             <h5>[사진] 브라이트랩 | 10.22(sun)</h4>
                             <p class="sub-title">GMF2023 | 10.22(sun)</p>
@@ -909,7 +1044,7 @@
                 </article>
                 <div class="cont-info">
                     <a href="#">
-                        <div class="photo ph08" style="background-image: url(img/main/news08.jpg);"></div>
+                        <div class="photo" style="background-image: url(img/main/news08.jpg);"></div>
                     </a>
                 </div>
             </div>
