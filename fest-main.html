@@ -44,6 +44,16 @@
         }
 
         /*-------header-------*/
+
+        /* 스크롤 시 배경색 변경 */
+        .scrolled {
+            background-color: rgba(0, 0, 0);
+        }
+        /* 가짜 콘텐츠 */
+        .content {
+        height: 2000px; /* 스크롤을 위한 가짜 콘텐츠 높이 */
+        }
+
             .nav-wrap{
                 width: 100%;
                 display: flex;
@@ -59,16 +69,7 @@
                     width: var(--width-per);
                     height: 60px;
                 }
-        /* 스크롤 시 배경색 변경 */
-        .scrolled {
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            border-bottom: solid 1px var(--bright-color-01);
-        }
-        /* 가짜 콘텐츠 */
-        .content {
-        height: 2000px; /* 스크롤을 위한 가짜 콘텐츠 높이 */
-        }
+        
                     .logo{
                         display: flex;
                         flex: 1;
@@ -88,7 +89,9 @@
                         .navbar-menu a{
                             color: var(--bright-color-01);
                             font-size: 15px;
-                            font-weight: 400;
+                        }
+                        .navbar-menu .current a{
+                            color: var(--main-color);
                         }
                     .utility{
                         display: flex;
@@ -102,22 +105,22 @@
                             cursor: pointer;
                         }
                         .hero{
-                background: linear-gradient(
-                    to bottom,
-                    rgba(0, 0, 0, 0.8),
-                    rgba(0, 0, 0, 0.1)65%,
-                    rgba(0, 0, 0, 1)
-                    ), 
-                    url(img/main/hero-iamge.jpg);
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
-            
-                position: relative;
-                top: 0;
-                width: 100%;
-                height: 900px;
-            }
+                            background: linear-gradient(
+                                to bottom,
+                                rgba(0, 0, 0, 0.8),
+                                rgba(0, 0, 0, 0.1)65%,
+                                rgba(0, 0, 0, 1)
+                                ), 
+                                url(img/main/hero-iamge.jpg);
+                            background-size: cover;
+                            background-position: center center;
+                            background-repeat: no-repeat;
+                        
+                            position: relative;
+                            top: 0;
+                            width: 100%;
+                            height: 900px;
+                        }
 
         /*-------conA-------*/
         .conA{
@@ -209,6 +212,71 @@
             background-image: url(img/fest-main/02.jpg);
         }
 
+        /*-------footer-------*/
+        footer{
+            width: var(--width-per);
+            margin: 160px auto 0;
+        }
+        .footA{
+            padding: 20px;
+            border-bottom: solid 1px var(--stroke-01);
+        }
+            .footA ul{
+                display: flex;
+                gap: 40px;
+            }
+                .footA a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                    line-height: 24px; /* 133.333% */
+                }
+                #mint{
+                    color: var(--main-color, #00E5A7);
+                    font-weight: 500;
+                }
+        
+            .footB{
+                display: flex;
+                padding: 20px;
+                align-items: center;
+            }
+                .footB ul{
+                    display: flex;
+                    gap: 40px;
+                }
+                
+                .footB li{
+                            display: flex;
+                        }
+                .footB li a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                }
+                .footB img{
+                    filter: brightness(50%); 
+                }
+                #flex{
+                    display: flex;
+                    gap: 6px;
+                }
+            
+            .footC{
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 60px 0;
+            }
+                .footC ul{
+                    display: flex;
+                    gap: 20px;
+                }
+                .footC .copyright{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                }
+
 
         /*-----------------------------------media---------------------------------*/
         @media (min-width: 768px) {/*-----------큰화면전용-----------*/
@@ -225,6 +293,7 @@
                     width: 90%;
                 }
                 .nav-mobile{
+                    display: flex;
                     padding: 0;
                     border: none;
                     outline: none;
@@ -234,9 +303,35 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 .logo{
                     order: 2;
                     display: block;
@@ -268,6 +363,77 @@
                     background-position: center center;
                     background-repeat: no-repeat;
                 }
+
+                /*-------footer-------*/
+                footer{
+                    width: 100%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 10px 40px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px 40px;
+                        gap: 20px;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                    }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
+                        .footB ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 12px;
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 60px 0;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
             }
 
             @media (max-width: 429.9px) {/*-----------420px전용-----------*/
@@ -276,6 +442,7 @@
                     width: 90%;
                 }
                 .nav-mobile{
+                    display: flex;
                     padding: 0;
                     border: none;
                     outline: none;
@@ -285,9 +452,35 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 .logo{
                     order: 2;
                     display: block;
@@ -305,14 +498,17 @@
                 /*-------conB-------*/
                 .conB{
                     width: 90%;
-                    margin: 84px auto 80px;
+                    margin: 44px auto 80px;
                 }
                 .box{
                 display: flex;
                 flex-direction: column-reverse;
 
                 gap: 40px;
-            }
+                }
+                h2{
+                    margin-bottom: 20px;
+                }
                 .photo{
                     position:relative;
                     max-width: 600px;
@@ -323,6 +519,76 @@
                     background-position: center center;
                     background-repeat: no-repeat;
                 }
+                /*-------footer-------*/
+                footer{
+                    width: 100%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 10px 20px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px 20px;
+                        gap: 20px;
+                        align-items: center;
+                        flex-direction: column-reverse;
+                    }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
+                        .footB ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 12px;
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px 0 60px;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
                 
             }
 
@@ -338,6 +604,16 @@
             navbar.classList.remove('scrolled');
         }
         });
+
+
+        function toggleMenu() {
+        var navItems = document.getElementById("navItems");
+        navItems.classList.toggle("active");
+        }
+
+        
+
+        
     </script>
 </head>
 <body>
@@ -348,23 +624,22 @@
             <div class="nav-wrap" id="navbar">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="#"><img src="img/logo.png" alt="index.html" height="20px"></a> 
+                        <a href="index.html"><img src="img/logo.png" alt="" height="20px"></a> 
                     </div>
-                    <div class="nav-content">
-                        <ul class="navbar-menu">
-                            <li class="navbar-item"><a href="aboutus.html">About us</a></li>
-                            <li class="navbar-item"><a href="fest-main.html">Festival</a></li>
-                            <li class="navbar-item"><a href="#">Project</a></li>
-                            <li class="navbar-item"><a href="connect.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <button type="button" class="nav-mobile">
+    
+                    <div class="nav-mobile" onclick="toggleMenu()">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg></span>
-                    </button>
-
+                        </svg></span>
+                    </div>
+    
+                    <ul class="navbar-menu" id="navItems">
+                        <li class="navbar-item"><a href="index.html">About us</a></li>
+                        <li class="navbar-item current"><a href="fest-main.html">Festival</a></li>
+                        <li class="navbar-item"><a href="#">Project</a></li>
+                        <li class="navbar-item"><a href="connect.html">Contact</a></li>
+                    </ul>
+    
                     <div class="utility">
                         <button class="search-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -384,7 +659,7 @@
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M4.5 9L7.5 6L4.5 3" stroke="#767676" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg></span>
-                <p>Fstival</p>
+                <p>Festival</p>
             </div>
     </section>
 
@@ -397,7 +672,7 @@
                     <li><a href="fest-sub.html">HAVE A NICE TRIP<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg></span></a></li>
-                    <li id="test"><a href="fest-sub.html">COUNTDOWN FANTASY<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <li><a href="fest-sub.html">COUNTDOWN FANTASY<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg></span></a></li>
                     <li><a href="fest-sub.html">Have A Nice Day<span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -416,5 +691,51 @@
     </section>
 
     <!-- footer -->
+     <footer>
+        <div class="container">
+            <div class="footA">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#" id="mint">개인정보취급방침</a></li>
+                </ul>
+            </div>
+            <div class="footB">
+                <div class="logo">
+                    <img src="/img/logo.png" alt="">
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><a href="aboutus.html">About Mint Paper</a></li>
+                        <li><a href="connect.html">Contact us</a></li>
+                        <li><a href="#" id="flex">
+                            <div class="text">Family site</div>
+                            <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <path d="M6 9.5L12 15.5L18 9.5" stroke="#D6D6D6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footC">
+                <div class="sns">
+                    <ul>
+                        <li><a href="https://www.instagram.com/mintpaper_/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M18.002 13.385C15.4481 13.385 13.3881 15.4455 13.3881 18C13.3881 20.5545 15.4481 22.615 18.002 22.615C20.5559 22.615 22.616 20.5545 22.616 18C22.616 15.4455 20.5559 13.385 18.002 13.385ZM18.002 21.0003C16.3516 21.0003 15.0023 19.6548 15.0023 18C15.0023 16.3452 16.3476 14.9997 18.002 14.9997C19.6564 14.9997 21.0017 16.3452 21.0017 18C21.0017 19.6548 19.6524 21.0003 18.002 21.0003ZM23.8809 13.1963C23.8809 13.7947 23.399 14.2727 22.8047 14.2727C22.2064 14.2727 21.7285 13.7907 21.7285 13.1963C21.7285 12.6018 22.2104 12.1198 22.8047 12.1198C23.399 12.1198 23.8809 12.6018 23.8809 13.1963ZM26.9368 14.2887C26.8685 12.8468 26.5392 11.5696 25.4831 10.5172C24.431 9.46491 23.154 9.13556 21.7124 9.06326C20.2267 8.97891 15.7733 8.97891 14.2876 9.06326C12.85 9.13154 11.573 9.46089 10.5169 10.5132C9.46079 11.5655 9.13553 12.8428 9.06325 14.2847C8.97892 15.7708 8.97892 20.2251 9.06325 21.7113C9.13151 23.1532 9.46079 24.4304 10.5169 25.4828C11.573 26.5351 12.846 26.8644 14.2876 26.9367C15.7733 27.0211 20.2267 27.0211 21.7124 26.9367C23.154 26.8685 24.431 26.5391 25.4831 25.4828C26.5352 24.4304 26.8645 23.1532 26.9368 21.7113C27.0211 20.2251 27.0211 15.7749 26.9368 14.2887ZM25.0173 23.3058C24.7041 24.093 24.0977 24.6995 23.3066 25.0168C22.122 25.4868 19.3111 25.3783 18.002 25.3783C16.6929 25.3783 13.878 25.4828 12.6974 25.0168C11.9103 24.7036 11.304 24.0971 10.9867 23.3058C10.5169 22.1209 10.6253 19.3094 10.6253 18C10.6253 16.6906 10.5209 13.875 10.9867 12.6942C11.2999 11.907 11.9063 11.3005 12.6974 10.9832C13.882 10.5132 16.6929 10.6217 18.002 10.6217C19.3111 10.6217 22.126 10.5172 23.3066 10.9832C24.0937 11.2964 24.7001 11.9029 25.0173 12.6942C25.4871 13.8791 25.3787 16.6906 25.3787 18C25.3787 19.3094 25.4871 22.125 25.0173 23.3058Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href="https://www.youtube.com/@MintPaper_" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M29.2084 12.6078C28.9358 11.5813 28.1326 10.7729 27.1128 10.4985C25.2642 10 17.8519 10 17.8519 10C17.8519 10 10.4395 10 8.59097 10.4985C7.57114 10.7729 6.76793 11.5813 6.49531 12.6078C6 14.4683 6 18.3502 6 18.3502C6 18.3502 6 22.232 6.49531 24.0926C6.76793 25.1191 7.57114 25.8938 8.59097 26.1681C10.4395 26.6667 17.8519 26.6667 17.8519 26.6667C17.8519 26.6667 25.2642 26.6667 27.1128 26.1681C28.1326 25.8938 28.9358 25.1191 29.2084 24.0926C29.7037 22.232 29.7037 18.3502 29.7037 18.3502C29.7037 18.3502 29.7037 14.4683 29.2084 12.6078ZM15.4276 21.8746V14.8257L21.6229 18.3503L15.4276 21.8746Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href="https://www.facebook.com/mintBook" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M22.3447 18.6875L22.8632 15.2489H19.621V13.0176C19.621 12.0768 20.0739 11.1599 21.526 11.1599H23V8.2323C23 8.2323 21.6624 8 20.3835 8C17.7134 8 15.9681 9.64691 15.9681 12.6283V15.2489H13V18.6875H15.9681V27H19.621V18.6875H22.3447Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">ⓒ 2021 MINT PAPER ALL Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
