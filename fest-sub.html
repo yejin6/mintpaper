@@ -83,9 +83,7 @@
                 }
         /* 스크롤 시 배경색 변경 */
         .scrolled {
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(15px);
-            border-bottom: solid 1px var(--bright-color-01);
+            background-color: var(--bg-color);
         }
         /* 가짜 콘텐츠 */
         .content {
@@ -111,6 +109,9 @@
                             color: var(--bright-color-01);
                             font-size: 15px;
                             font-weight: 400;
+                        }
+                        .navbar-menu .current a{
+                            color: var(--main-color);
                         }
                     .utility{
                         display: flex;
@@ -225,12 +226,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex-wrap: wrap;
         }
         .conB-cont{
             display: flex;
             gap: 40px;
-            justify-content: center;
-            align-items: end;
+            justify-content: center;/
         }
             #conB .photo{
                 background-image: url(img/fest-sub/info.jpg);
@@ -241,7 +242,7 @@
                 width: 365px;
                 height: 530px; /*-----수정하기-----*/
             }
-            .info{
+            #conB .info{
                 display: flex;
                 flex-direction: column;
                 padding: 10px;
@@ -337,58 +338,21 @@
                 gap: 10px;
                 margin-top: 10px;
             }
+            .sub-01, .sub-02{
+                display: flex;
+                width: 100%;
+                gap: 10px;
+            }
             .sub a{
-                display: inline-block;
+                display: block;
                 width: 100%;
             }
-                .sub1{
-                    background-image: url(img/fest-sub/contents01.jpg);
-                    background-size: 100%;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    aspect-ratio: 16 / 8;
-                    transition: all 0.2s ease-in;
-                }
-                .sub2{
-                    background-image: url(img/fest-sub/contents02.jpg);
-                    background-size: 100%;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    aspect-ratio: 16 / 8;
-                    
-                    transition: all 0.2s ease-in;
-                }
-                .sub3{
-                    background-image: url(img/fest-sub/contents03.jpg);
-                    background-size: 100%;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    aspect-ratio: 16 / 8;
-                    
-                    transition: all 0.2s ease-in;
-                }
-                .sub4{
-                    background-image: url(img/fest-sub/contents04.jpg);
-                    background-size: 100%;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    aspect-ratio: 16 / 8;
-                    
-                    transition: all 0.2s ease-in;
-                }
-
-        .sub1:hover{
-            background-size: 105%;
-        }
-        .sub2:hover{
-            background-size: 105%;
-        }
-        .sub3:hover{
-            background-size: 105%;
-        }
-        .sub4:hover{
-            background-size: 105%;
-        }
+            #conC .photo{
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                height: 140px;
+            }
 
 
         /*-------conD-------*/
@@ -402,66 +366,48 @@
         .gallery{
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
             width: 100%;
             justify-content: center;
         }
-        .gallery a{
-            display: flex;
-            width: 24%;
-            aspect-ratio: 1 / 1;
-
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        /*img*/
-            #img01{
-                background-image: url(img/fest-sub/gallery01.jpg);
+            #conD .box{
+                width: 20%;
+                aspect-ratio: 1 /1;
+                overflow: hidden;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+               
             }
-            #img02{
-                background-image: url(img/fest-sub/gallery02.jpg);
+           .box:hover .info{
+                opacity: 1;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 229, 167, 0.50) 100%);
             }
-            #img03{
-                background-image: url(img/fest-sub/gallery03.jpg);
-            }
-            #img04{
-                background-image: url(img/fest-sub/gallery04.jpg);
-            }
-            #img05{
-                background-image: url(img/fest-sub/gallery05.jpg);
-            }
-            #img06{
-                background-image: url(img/fest-sub/gallery06.jpg);
-            }
-            #img07{
-                background-image: url(img/fest-sub/gallery07.jpg);
-            }
-            #img08{
-                background-image: url(img/fest-sub/gallery08.jpg);
-            }
-            #img09{
-                background-image: url(img/fest-sub/gallery09.jpg);
-            }
-            #img10{
-                background-image: url(img/fest-sub/gallery10.jpg);
-            }
-            #img11{
-                background-image: url(img/fest-sub/gallery11.jpg);
-            }
-            #img12{
-                background-image: url(img/fest-sub/gallery12.jpg);
-            }
-
-            .img-info{
+            .box .info{
+                opacity: 0;
+                z-index: 100;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                padding: 12px 24px;
                 display: flex;
                 flex-direction: column;
                 justify-content: end;
-                width: 100%;
+                transition: all 0.3s ease;
+            }
+            #conD .img{
                 height: 100%;
-                padding: 6%;
-                opacity: 0;
-                transition: all 0.2s ease-in;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #conD img{
+                width: 120%;
+                height: 100%;
+                object-fit: cover;
             }
             #conD .name{
                 color: var(--bright-color-01, #FFF);
@@ -472,12 +418,6 @@
                 color: var(--bright-color-02, #DADADA);
                 font-size: 16px;
             }
-            
-            .gallery a:hover .img-info{
-                opacity: 1;
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 229, 167, 0.50) 100%);
-            }
-            
             
         /*-------conE-------*/
         #conE{
@@ -515,6 +455,73 @@
             tr:not(:last-child){
                 border-bottom: 1px solid var(--stroke-02, #343434);
             }
+
+        
+        /*-------footer-------*/
+        footer{
+            width: var(--width-per);
+            margin: 160px auto 0;
+        }
+        .footA{
+            padding: 20px;
+            border-bottom: solid 1px var(--stroke-01);
+        }
+            .footA ul{
+                display: flex;
+                gap: 40px;
+            }
+                .footA a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                    line-height: 24px; /* 133.333% */
+                }
+                #mint{
+                    color: var(--main-color, #00E5A7);
+                    font-weight: 500;
+                }
+        
+            .footB{
+                display: flex;
+                padding: 20px;
+                align-items: center;
+            }
+                .footB ul{
+                    display: flex;
+                    gap: 40px;
+                }
+                
+                .footB li{
+                            display: flex;
+                        }
+                .footB li a{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                }
+                .footB img{
+                    filter: brightness(50%); 
+                }
+                #flex{
+                    display: flex;
+                    gap: 6px;
+                }
+            
+            .footC{
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 60px 0;
+            }
+                .footC ul{
+                    display: flex;
+                    gap: 20px;
+                }
+                .footC .copyright{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                }
+
         /*-----------------------------------media---------------------------------*/
         @media (min-width: 768px) {/*-----------큰화면전용-----------*/
                 /*-------header-------*/
@@ -538,9 +545,35 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 .logo{
                     order: 2;
                     display: block;
@@ -572,18 +605,27 @@
                     .menu a{
                         font-size: 18px;
                     }
+                    .year .non-mobile{
+                        display: none;
+                    }
                 /*-------conB-------*/
                 #conB{
                     width: 90%;
                     margin: 0 auto 160px;
                 }
+                    .conB-cont{
+                        flex-direction: column;
+                    }
                     #conB .photo{
-                        width: 335px;
+                        width: 100%;
                         height: 474px; /*-----수정하기-----*/
                     }
                     .info-icon p{
                         font-size: 16px;
                         letter-spacing: -0.4px;
+                    }
+                    #conB .info{
+                        width: 100%;
                     }
                     #conB .long{
                         font-size: 14px;
@@ -614,20 +656,153 @@
                 /*-------conD-------*/
                 #conD{
                     width: 90%;
-                    margin: 0 auto 160px;
+                    margin: 0 auto 140px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
-                .gallery a{
-                    width: 49%;
+                .gallery{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    justify-content: center;
                 }
+                    #conD .box{
+                        width: 40%;
+                        aspect-ratio: 1 /1;
+                        overflow: hidden;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 10px;
+                    
+                    }
+                .box:hover .info{
+                        opacity: 1;
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 229, 167, 0.50) 100%);
+                    }
+                    .box .info{
+                        opacity: 0;
+                        z-index: 100;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 12px 24px;
+                        display: flex;
+                        justify-content: end;
+                        transition: all 0.3s ease;
+                    }
+                    #conD .img{
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    #conD img{
+                        width: 120%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    #conD .name{
+                        color: var(--bright-color-01, #FFF);
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+                    #conD .date{
+                        color: var(--bright-color-02, #DADADA);
+                        font-size: 16px;
+                    }
 
                 /*-------conE-------*/
                 #conE{
                     width: 90%;
                     margin: 0 auto 160px;
                 }
+
+                /*-------footer-------*/
+                footer{
+                    width: 100%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 10px 40px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px 40px;
+                        gap: 20px;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                    }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
+                        .footB ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 12px;
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 60px 0;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
             }
 
             @media (max-width: 429.9px) {/*-----------420px전용-----------*/
+                h3{
+                    color: var(--bright-color-01, #FFF);
+                    font-size: 28px;
+                    font-weight: 700;
+                    text-align: center;
+                    letter-spacing: -0.9px;
+                    margin-bottom: 40px;
+                }
                 /*-------header-------*/
                 .navbar{
                     width: 90%;
@@ -642,9 +817,35 @@
                     flex: 1;
                     text-align: left;
                 }
-                .nav-content{
-                    display: none;
-                }
+                .navbar-menu {
+                        display: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        gap: 0;
+                    }
+
+                    .navbar-menu.active {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex;
+                    }
+                    .navbar-item{
+                            padding: 18px 20px;
+                        }
+                    .navbar li{
+                        width: 100%;
+                    }
+                    .navbar a{
+                        display: block;
+                        text-align: center;
+                    }
+                    .navbar li:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
                 .logo{
                     order: 2;
                     display: block;
@@ -670,8 +871,11 @@
                     width: 90%;
                     margin: 28px auto 80px;
                 }
+                    .year{
+                        width: 100%;
+                    }
                     .year ul{
-                        gap: 40px;
+                        gap: 20px;
                         margin-bottom: 40px;
                     }
                     .year a{
@@ -683,7 +887,7 @@
                     .menu a{
                         font-size: 16px;
                     }
-                    .non-420{
+                    .non-mobile{
                         display: none;
                     }
                 /*-------conB-------*/
@@ -716,7 +920,7 @@
                     margin: 0 auto 80px;
                 }
                     .main{
-                        padding: 0 10px;
+                        padding: 20px 14px;
                     }
                     .main p:nth-child(1){
                         font-size: 12px;
@@ -732,19 +936,73 @@
                         letter-spacing: -0.3px;
                     }
                     #conC button{
-                        width: 36px;
-                        height: 36px;
+                        width: 24px;
+                        height: 24px;
                         margin-top: 30px;
             }
                 
                 /*-------conD-------*/
                 #conD{
                     width: 90%;
-                    margin: 0 auto 80px;
+                    margin: 0 auto 140px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                 }
-                .gallery a{
-                    width: 48%;
+                .gallery{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    justify-content: center;
                 }
+                    #conD .box{
+                        width: 40%;
+                        aspect-ratio: 1 /1;
+                        overflow: hidden;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 10px;
+                    
+                    }
+                .box:hover .info{
+                        opacity: 1;
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 229, 167, 0.50) 100%);
+                    }
+                    .box .info{
+                        opacity: 0;
+                        z-index: 100;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 12px 18px;
+                        display: flex;
+                        justify-content: end;
+                        transition: all 0.3s ease;
+                    }
+                    #conD .img{
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    #conD img{
+                        width: 120%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    #conD .name{
+                        color: var(--bright-color-01, #FFF);
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    #conD .date{
+                        color: var(--bright-color-02, #DADADA);
+                        font-size: 12px;
+                    }
 
                 /*-------conE-------*/
                 #conE{
@@ -762,6 +1020,77 @@
                 th:nth-child(1){
                     width: 15%;
                 }
+
+                /*-------footer-------*/
+                footer{
+                    width: 100%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 10px 20px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px 20px;
+                        gap: 20px;
+                        align-items: center;
+                        flex-direction: column-reverse;
+                    }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
+                        .footB ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 12px;
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px 0 60px;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
             }
             
     </style>
@@ -778,20 +1107,26 @@
         });
 
         // 앵커를 클릭했을 때 부드러운 스크롤 이벤트 설정
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
 
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-    // 부드러운 스크롤 효과 적용 (예시: 800ms 동안 스크롤)
-    targetElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-  });
-});
+            // 부드러운 스크롤 효과 적용 (예시: 800ms 동안 스크롤)
+            targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+            });
+        });
+        });
+
+        //햄버거
+        function toggleMenu() {
+        var navItems = document.getElementById("navItems");
+        navItems.classList.toggle("active");
+        }
     </script>
 </head>
 <body>
@@ -807,23 +1142,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             <div class="nav-wrap" id="navbar">
                 <div class="navbar">
                     <div class="logo">
-                        <a href="#"><img src="img/logo.png" alt="index.html" height="20px"></a> 
+                        <a href="index.html"><img src="img/logo.png" alt="" height="20px"></a> 
                     </div>
-                    <div class="nav-content">
-                        <ul class="navbar-menu">
-                            <li class="navbar-item"><a href="aboutus.html">About us</a></li>
-                            <li class="navbar-item"><a href="fest-main.html">Festival</a></li>
-                            <li class="navbar-item"><a href="#">Project</a></li>
-                            <li class="navbar-item"><a href="connect.html">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <button type="button" class="nav-mobile">
+    
+                    <div class="nav-mobile" onclick="toggleMenu()">
                         <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 12H21M3 6H21M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </svg></span>
-                    </button>
-
+                        </svg></span>
+                    </div>
+    
+                    <ul class="navbar-menu" id="navItems">
+                        <li class="navbar-item"><a href="index.html">About us</a></li>
+                        <li class="navbar-item current"><a href="fest-main.html">Festival</a></li>
+                        <li class="navbar-item"><a href="#">Project</a></li>
+                        <li class="navbar-item"><a href="connect.html">Contact</a></li>
+                    </ul>
+    
                     <div class="utility">
                         <button class="search-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -847,11 +1181,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
      <section class="conA">
         <div class="year">
             <ul>
-                <li class="non-420"><a href="#">2021</a></li>
+                <li class="non-mobile"><a href="#">2021</a></li>
                 <li><a href="#">2022</a></li>
                 <li><a href="#">2023</a></li>
                 <li><a href="#">2024</a></li>
-                <li class="non-420"><a href="#">2025</a></li>
+                <li class="non-mobile"><a href="#">2025</a></li>
             </ul>
         </div>
 
@@ -919,23 +1253,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
      <section id="conC">
         <h3>Contents</h3>
         <div class="video">
-            <div class="main">
-                <a href="">
+            <a href="fest-sub2.html">
+                <div class="main">
                     <div class="title">
                         <p>Highlit Video</p>
                         <p>그랜드 민트 페스티벌 2023 하이라이트</p>
                         <p>10월, Grand Mint Festival과 함께 가을을 물들인 42팀의 아티스트</p>
                     </div>
-                    <button><a href="fest-sub2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <button><a href="fest-sub2.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                         <path d="M5 2.48963C5 4.51847 2 4.03289 2.20249 3.76522C5.37889 3.53203 2.64852 3.38773 2.9404 3.3703C6.27544 3.3503 6.67946 3.61965 7.48752 4.15835L18.0031 11.1687C18.6708 11.6139 19.0046 11.8364 19.1209 12.1169C19.2227 12.3622 19.2227 12.6378 19.1209 12.8831C19.0046 13.1636 18.6708 13.3862 18.0031 13.8313L7.48752 20.8417C6.67946 21.3804 6.27544 21.6497 2.9404 21.6297C5.64852 21.6123 2.37889 21.468 2.20249 21.2348C5 20.9671 2 20.4815 2 19.5104V5.48963Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg></a></button>
-                </a>
-            </div>
+                </div>
+            </a>
             <div class="sub">
-                <a href=""><div class="sub1"></div></a>
-                <a href=""><div class="sub2"></div></a>
-                <a href=""><div class="sub3"></div></a>
-                <a href=""><div class="sub4"></div></a>
+                <div class="sub-01">
+                    <a href=""><div class="photo" style="background-image: url(img/fest-sub/contents01.jpg);"></div></a>
+                    <a href=""><div class="photo" style="background-image: url(img/fest-sub/contents02.jpg);"></div></a>
+                </div>
+                <div class="sub-02">
+                    <a href=""><div class="photo" style="background-image: url(img/fest-sub/contents03.jpg);"></div></a>
+                    <a href=""><div class="photo" style="background-image: url(img/fest-sub/contents04.jpg);"></div></a>
+                </div>
             </div>
         </div>
      </section>
@@ -944,89 +1282,93 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
      <section id="conD">
         <h3>Gallery</h3>
         <div class="gallery">
-                <a id="img01" href="">
-                    <div class="img-info">
-                        <div class="name">N.Flying</div>
-                        <div class="date">2023.11.02</div>
-                    </div>
-                </a>
-            
-                <a id="img02" href="">
-                    <div class="img-info">
-                        <div class="name">쏜애플</div>
-                        <div class="date">2023.11.02</div>
-                    </div>
-                </a>
-            
-                <a id="img03" href="">
-                    <div class="img-info">
-                        <div class="name">하현상</div>
-                        <div class="date">2023.11.02</div>
-                    </div>
-                </a>
-            
-                <a id="img04" href="">
-                    <div class="img-info">
-                        <div class="name">오월오일</div>
-                        <div class="date">2023.11.02</div>
-                    </div>
-                </a>
-            
-                <a id="img05" href="">
-                    <div class="img-info">
-                        <div class="name">데이먼스 이어</div>
-                        <div class="date">2023.11.03</div>
-                    </div>
-                </a>
-            
-                <a id="img06" href="">
-                    <div class="img-info">
-                        <div class="name">LUCY</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img07" href="">
-                    <div class="img-info">
-                        <div class="name">터치드</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img08" href="">
-                    <div class="img-info">
-                        <div class="name">유다빈밴드</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img09" href="">
-                    <div class="img-info">
-                        <div class="name">실리카겔</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img10" href="">
-                    <div class="img-info">
-                        <div class="name">Lacuna</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img11" href="">
-                    <div class="img-info">
-                        <div class="name">한로로</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
-            
-                <a id="img12" href="">
-                    <div class="img-info">
-                        <div class="name">김필</div>
-                        <div class="date">2023.11.04</div>
-                    </div>
-                </a>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery01.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">N.Flying</p>
+                    <p class="date">2023.11.02</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery02.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">쏜애플</p>
+                    <p class="date">2023.11.02</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery03.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">하현상</p>
+                    <p class="date">2023.11.02</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img" style="width: 100%;"><img src="img/fest-sub/gallery04.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">오월오일</p>
+                    <p class="date">2023.11.02</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery05.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">데이먼스 이어</p>
+                    <p class="date">2023.11.03</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery06.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">LUCY</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img" style="width: 100%;"><img src="img/fest-sub/gallery07.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">터치드</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery08.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">유다빈밴드</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery09.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">실리카겔</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img" style="width: 100%;"><img src="img/fest-sub/gallery10.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">Lacuna</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery11.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">한로로</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="img/fest-sub/gallery12.jpg" alt=""></div>
+                <div class="info">
+                    <p class="name">김필</p>
+                    <p class="date">2023.11.04</p>
+                </div>
+            </div>
+                
             
         </div>
      </section>
@@ -1102,5 +1444,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
       </table>
      </section>
+
+     <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="footA">
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#" id="mint">개인정보취급방침</a></li>
+                </ul>
+            </div>
+            <div class="footB">
+                <div class="logo">
+                    <img src="/img/logo.png" alt="">
+                </div>
+                <div class="info">
+                    <ul>
+                        <li><a href="aboutus.html">About Mint Paper</a></li>
+                        <li><a href="connect.html">Contact us</a></li>
+                        <li><a href="#" id="flex">
+                            <div class="text">Family site</div>
+                            <div class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                <path d="M6 9.5L12 15.5L18 9.5" stroke="#D6D6D6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footC">
+                <div class="sns">
+                    <ul>
+                        <li><a href="https://www.instagram.com/mintpaper_/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M18.002 13.385C15.4481 13.385 13.3881 15.4455 13.3881 18C13.3881 20.5545 15.4481 22.615 18.002 22.615C20.5559 22.615 22.616 20.5545 22.616 18C22.616 15.4455 20.5559 13.385 18.002 13.385ZM18.002 21.0003C16.3516 21.0003 15.0023 19.6548 15.0023 18C15.0023 16.3452 16.3476 14.9997 18.002 14.9997C19.6564 14.9997 21.0017 16.3452 21.0017 18C21.0017 19.6548 19.6524 21.0003 18.002 21.0003ZM23.8809 13.1963C23.8809 13.7947 23.399 14.2727 22.8047 14.2727C22.2064 14.2727 21.7285 13.7907 21.7285 13.1963C21.7285 12.6018 22.2104 12.1198 22.8047 12.1198C23.399 12.1198 23.8809 12.6018 23.8809 13.1963ZM26.9368 14.2887C26.8685 12.8468 26.5392 11.5696 25.4831 10.5172C24.431 9.46491 23.154 9.13556 21.7124 9.06326C20.2267 8.97891 15.7733 8.97891 14.2876 9.06326C12.85 9.13154 11.573 9.46089 10.5169 10.5132C9.46079 11.5655 9.13553 12.8428 9.06325 14.2847C8.97892 15.7708 8.97892 20.2251 9.06325 21.7113C9.13151 23.1532 9.46079 24.4304 10.5169 25.4828C11.573 26.5351 12.846 26.8644 14.2876 26.9367C15.7733 27.0211 20.2267 27.0211 21.7124 26.9367C23.154 26.8685 24.431 26.5391 25.4831 25.4828C26.5352 24.4304 26.8645 23.1532 26.9368 21.7113C27.0211 20.2251 27.0211 15.7749 26.9368 14.2887ZM25.0173 23.3058C24.7041 24.093 24.0977 24.6995 23.3066 25.0168C22.122 25.4868 19.3111 25.3783 18.002 25.3783C16.6929 25.3783 13.878 25.4828 12.6974 25.0168C11.9103 24.7036 11.304 24.0971 10.9867 23.3058C10.5169 22.1209 10.6253 19.3094 10.6253 18C10.6253 16.6906 10.5209 13.875 10.9867 12.6942C11.2999 11.907 11.9063 11.3005 12.6974 10.9832C13.882 10.5132 16.6929 10.6217 18.002 10.6217C19.3111 10.6217 22.126 10.5172 23.3066 10.9832C24.0937 11.2964 24.7001 11.9029 25.0173 12.6942C25.4871 13.8791 25.3787 16.6906 25.3787 18C25.3787 19.3094 25.4871 22.125 25.0173 23.3058Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href="https://www.youtube.com/@MintPaper_" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M29.2084 12.6078C28.9358 11.5813 28.1326 10.7729 27.1128 10.4985C25.2642 10 17.8519 10 17.8519 10C17.8519 10 10.4395 10 8.59097 10.4985C7.57114 10.7729 6.76793 11.5813 6.49531 12.6078C6 14.4683 6 18.3502 6 18.3502C6 18.3502 6 22.232 6.49531 24.0926C6.76793 25.1191 7.57114 25.8938 8.59097 26.1681C10.4395 26.6667 17.8519 26.6667 17.8519 26.6667C17.8519 26.6667 25.2642 26.6667 27.1128 26.1681C28.1326 25.8938 28.9358 25.1191 29.2084 24.0926C29.7037 22.232 29.7037 18.3502 29.7037 18.3502C29.7037 18.3502 29.7037 14.4683 29.2084 12.6078ZM15.4276 21.8746V14.8257L21.6229 18.3503L15.4276 21.8746Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                        <li><a href="https://www.facebook.com/mintBook" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                            <rect width="36" height="36" rx="18" fill="#515151"/>
+                            <path d="M22.3447 18.6875L22.8632 15.2489H19.621V13.0176C19.621 12.0768 20.0739 11.1599 21.526 11.1599H23V8.2323C23 8.2323 21.6624 8 20.3835 8C17.7134 8 15.9681 9.64691 15.9681 12.6283V15.2489H13V18.6875H15.9681V27H19.621V18.6875H22.3447Z" fill="#D6D6D6"/>
+                          </svg></a></li>
+                    </ul>
+                </div>
+                <div class="copyright">ⓒ 2021 MINT PAPER ALL Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
