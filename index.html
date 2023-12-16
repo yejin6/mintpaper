@@ -143,7 +143,7 @@
             }
             h2{
                 font-family: Roboto;
-                font-size: 96px;
+                font-size: 72px;
                 font-weight: 900;
                 letter-spacing: 9.6px;
                 color: transparent;
@@ -213,14 +213,15 @@
             .conA-cont{
                 display: flex;
                 flex-direction: column;
-                justify-content: end;
                 gap: 60px;
                 width: 90%;
                 margin: 0 auto;
+                overflow: hidden;
             }
             
             .conA .cont{
                 display: flex;
+                align-items: center;
                 gap: 20px;
             }
             .conA .cont:nth-child(2){
@@ -228,17 +229,19 @@
                 flex-direction: row-reverse;
             }
             .conA-cont .cont .photo{
-                flex: 2;
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
+                flex: 3;
+                height: 230px;
+            }
+            .conA img{
+                height: inherit;
+                width: 100%;
             }
             .conA-cont .cont .info{
                 display: block;
                 /* display: flex;
                 flex-direction: column; */
                 /* align-items: flex-end; */ /*왜 컬럼일때는 이모양인가*/
-                flex: 3;
+                flex: 2;
                 
                 padding: 20px;
             }
@@ -275,36 +278,38 @@
             width: 44px;
             height: 44px;
         }
-        .conB a{
-            display: block;
-            width: 100%;
-        }
-        .slide01{
-            width: 100%;
+        .conB-cont{
             display: flex;
             gap: 40px;
         }
-        .conB .img{
-            min-height: 300px;
-            background-position: center;
-            background-size:100%;
-            background-repeat: no-repeat;
-            margin-bottom: 40px;
-            transition: all 0.2s ease-in;
+        .conB-cont a{
+            display: block;
+            width: 50%;
+            overflow: hidden;
         }
+        .conB-cont .img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           aspect-ratio: 3 / 2;
+        }
+        .conB-cont img{
+            height: 100%;
+            width: 100%;
+        }
+        
         .conB .title{
             color: var(--bright-color-01, #FFF);
-            font-size: 150%;
+            font-size: 24px;
             font-weight: 500;
             letter-spacing: -0.7px;
+            margin-top: 32px;
         }
         .conB .date{
             color: var(--caption, #B5B5B5);
-            font-size: 100%;
+            font-size: 16px;
             letter-spacing: -0.4px;
-        }
-        .conB a:hover .img{
-            background-size: 102%;
+            margin-top: 14px;
         }
 
         /*-------conC-now on-------*/
@@ -321,21 +326,25 @@
             }
                 .video{
                     display: flex;
+                    justify-content: center;
                     width: 100%;
                     gap: 24px;
+                    overflow: hidden;
                 }
                     iframe{
-                        width: 50%;
+                        width: 48%;
                         aspect-ratio: 16/9;
                     }
                 .conC a{
+                    display: block ;
+                    width: 100px;
                     margin: 40px auto 0;
+                    padding: 10px 20px;
+                    text-align: center;
                     color: var(--bright-color-01, #FFF);
                     font-size: 16px;
                     font-weight: 500;
                     letter-spacing: -0.4px;
-                    padding: 10px 20px;
-                    text-align: center;
                     border: 1px solid var(--stroke-01, #767676);
                 }
 
@@ -369,41 +378,29 @@
                     display: flex;
                     flex-direction: column;
                     gap: 24px;
-                    width: 100%
+                    width: 33%;
+                    overflow: hidden;
                 }
             .conD article{
                 width: 100%;
                 display: flex;
                 flex-wrap: wrap;
+                
             }
             .conD article a{
-                /* flex: 1; */
-                display: inline-block;
+                display: flex;
+                flex-direction: column;
                 width: 100%;
             }
             .conD .photo{
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: 150%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
-                /* .ph02{
-                    height: 500px;
-                }
-                .ph03{
-                    height: 260px;
-                }
-                .ph04{
-                    height: 550px;
-                }.ph05{
-                    height: 280px;
-                }.ph06{
-                    height: 340px;
-                }.ph07{
-                    height: 276px;
-                }
-                .ph08{
-                    height: 270px;
-                } */
+            .conD img{
+                width: 100%;
+            }
             .conD-cont-colu .info{
                 background-color: rgba(255, 255, 255, 0.1);
                 padding: 20px;
@@ -423,15 +420,10 @@
                 margin-bottom: 60px;
             }
 
-            .conD a:hover .photo{
-                transform: scale(110%);
-            }
-
         /*-------conE-contect-------*/
         .conE{
             width: var(--width-per);
             margin: 0 auto;
-            min-width: 800px;
         }
         
         .conE-cont{
@@ -594,11 +586,11 @@
                     height: 700px;
                 }
                     .hero-txt{
-                        padding-top: 360px;
+                        padding-top: 260px;
                         text-align: center;
                     }
                     h2{
-                        font-size: 64px;
+                        font-size: 54px;
                         letter-spacing: 6.4px;
                     }
                     .hero-txt p{
@@ -631,12 +623,67 @@
                     margin: 0 auto 120px;
                 }
                     .conA-cont{
-                        width: 90%;
+                        width: 100%;
                     }
                     .conA-cont .cont .info p{
                         font-size: 14px;
                         letter-spacing: -0.3px;
                     }
+                    .conA h3{
+                text-align: center;
+            }
+            h4{
+                color: var(--main-color, #00E5A7);
+                font-size: 28px;
+                font-weight: 600;
+                letter-spacing: -0.7px;
+            }
+            .conA .center{
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            
+            .conA-cont{
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                gap: 60px;
+                width: 90%;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            
+            .conA .cont{
+                display: flex;
+                gap: 20px;
+            }
+            .conA .cont:nth-child(2){
+                display: flex;
+                flex-direction: row-reverse;
+            }
+            .conA-cont .cont .photo{
+                flex: 1;
+                height: 230px;
+            }
+            .conA img{
+                height: 100%;
+            }
+            .conA-cont .cont .info{
+                display: block;
+                /* display: flex;
+                flex-direction: column; */
+                /* align-items: flex-end; */ /*왜 컬럼일때는 이모양인가*/
+                flex: 1;
+                
+                padding: 20px;
+            }
+            .conA-cont .cont .info p{
+                color: var(--bright-color-02, #DADADA);
+                font-size: 14px;
+                line-height: 24px; /* 155.556% */
+                letter-spacing: -0.45px;
+                margin-top: 20px;
+            }
 
                 /*-------conB-project-------*/
                 .conB{
@@ -649,30 +696,37 @@
                     width: 90%;
                     margin: 0 auto 120px;
                 }
+                .conB .title{
+                    font-size: 20px ;
+                    font-weight: 500;
+                    letter-spacing: -0.7px;
+                    margin-top: 20px;
+                }
+                .conB .date{
+                    font-size: 12px;
+                    margin-top: 6px;
+                }
 
                 /*-------conD-news-------*/
                 .conD{
                     width: 90%;
-                    margin: 0 auto 120px;
+                    margin: 0 auto 140px;
                 }
-                    .more-btn{
-                        width: 24px;
-                        height: 24px;
-                    }
-                .conD-cont{/*전체*/
+                .conD-cont{
+                    flex-direction: column;
+                }
+                .conD-cont-colu{/*개별*/
                     display: flex;
+                    flex-direction: column;
                     gap: 24px;
+                    width: 100%;
                     overflow: hidden;
                 }
-                    .conD-cont-colu{/*개별*/
-                            flex-direction: row;
-                        }
                 
                 /*-------conE-contect-------*/
                 .conE{
                     width: 90%;
                     margin: 0 auto;
-                    min-width: 800px;
                 }
                 
                 .conE-cont{
@@ -682,11 +736,11 @@
 
                 /*-------footer-------*/
                 footer{
-                    width: 90%;
+                    width: 100%;
                     margin: 160px auto 0;
                 }
                 .footA{
-                    padding: 20px;
+                    padding: 10px 40px;
                     border-bottom: solid 1px var(--stroke-01);
                 }
                     .footA ul{
@@ -705,24 +759,33 @@
                 
                     .footB{
                         display: flex;
-                        padding: 20px;
+                        padding: 20px 40px;
+                        gap: 20px;
                         align-items: center;
+                        flex-direction: row-reverse;
                     }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
                         .footB ul{
                             display: flex;
-                            gap: 40px;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
                         }
                         .footB li a{
                             color: var(--caption, #B5B5B5);
-                            font-size: 14px;
-                            line-height: 24px;
-                        }
-                        .footB img{
-                            filter: brightness(50%); 
+                            font-size: 12px;
                         }
                         #flex{
                             display: flex;
                             gap: 6px;
+                            align-items: center;
                         }
                     
                     .footC{
@@ -799,6 +862,260 @@
                     order: 3;
                     flex: 1;
                 }
+                .hero{
+                    height: 700px;
+                }
+                    .hero-txt{
+                        padding-top: 220px;
+                        text-align: center;
+                    }
+                    h2{
+                        font-size: 54px;
+                        letter-spacing: 6.4px;
+                    }
+                    .hero-txt p{
+                        font-size: 16px;
+                        letter-spacing: -0.4%;
+                        margin-bottom: 100px;
+                    }
+                    .hero-txt a{
+                        font-size: 16px;
+                        letter-spacing: -0.4px;
+                    }
+                
+                /*-------공통-------*/
+                h3{
+                    font-size: 36px;
+                    letter-spacing: -0.9px;
+                    color: transparent;
+                }
+                p{
+                    font-size: 14px;
+                    letter-spacing: -0.35px;
+                }
+                h4{
+                    font-size: 27px;
+                    letter-spacing: -0.7px;
+                }   
+
+                /*-------conA-mint paper-------*/
+                .conA{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+                    .conA-cont{
+                        width: 100%;
+                    }
+                    .conA-cont .cont .info p{
+                        font-size: 14px;
+                        letter-spacing: -0.3px;
+                    }
+                    .conA h3{
+                text-align: center;
+            }
+            h4{
+                color: var(--main-color, #00E5A7);
+                font-size: 28px;
+                font-weight: 600;
+                letter-spacing: -0.7px;
+            }
+            .conA .center{
+                text-align: center;
+                margin-bottom: 80px;
+            }
+            .conA .photo{
+                width: 100%;
+                height: 200px;
+            }
+            .conA .cont{
+                display: flex;
+                flex-direction: column-reverse;
+
+                gap: 14px;  
+            }
+
+            .conA .cont:nth-child(2){
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .conA-cont .cont .photo{
+                flex: 2;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .conA-cont .cont .info{
+                display: block;
+                flex: 3;
+                
+                padding: 10px;
+            }
+            .conA-cont .cont .info p{
+                color: var(--bright-color-02, #DADADA);
+                font-size: 14px;
+                line-height: 24px; /* 155.556% */
+                letter-spacing: -0.45px;
+                margin-top: 10px;
+            }
+
+                /*-------conB-project-------*/
+                .conB{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+                .conB-cont{
+                    flex-direction: column;
+                }
+                .conB-cont a{
+                    width: 100%;
+                }
+
+                /*-------conC-now on-------*/
+                .conC{
+                    width: 90%;
+                    margin: 0 auto 120px;
+                }
+                .video{
+                    flex-direction: column;
+                }
+                iframe{
+                    width: 100%;
+                }
+                .conB .title{
+                    font-size: 20px ;
+                    font-weight: 500;
+                    letter-spacing: -0.7px;
+                    margin-top: 20px;
+                }
+                .conB .date{
+                    font-size: 12px;
+                    margin-top: 6px;
+                }
+
+                /*-------conD-news-------*/
+                .conD{
+                    width: 90%;
+                    margin: 0 auto 140px;
+                }
+                .conD-cont{
+                    flex-direction: column;
+                }
+                .conD-cont-colu{/*개별*/
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    width: 100%;
+                    overflow: hidden;
+                }
+                h5{
+                color: var(--bright-color-01, #FFF);
+                font-size: 20px;
+                font-weight: 500;
+                letter-spacing: -0.6px;
+                margin-bottom: 10px;
+            }
+            .conD .sub-title{
+                /*color: var(--bright-color-03, #B7B7B7);*/ /*---왜 적용이 안되냐???--*/
+                font-size: 14px;
+                line-height: 20px; /* 150% */
+                letter-spacing: -0.4px;
+                margin-bottom: 60px;
+            }
+                
+                /*-------conE-contect-------*/
+                .conE{
+                    width: 90%;
+                    margin: 0 auto;
+                }
+                
+                .conE-cont{
+                    flex-direction: column;
+                    gap: 40px;
+                }
+                .conE .title{
+                    color: var(--bright-color-01, #FFF);
+                    font-size: 22px;
+                    font-weight: 500;
+                    letter-spacing: -0.6px;
+                    margin-bottom: 4px;
+                }
+                .conE .sub-title{
+                    color: var(--caption, #B5B5B5);
+                    font-size: 14px;
+                    font-weight: 500;
+                    letter-spacing: -0.35px;
+                }
+
+                /*-------footer-------*/
+                footer{
+                    width: 100%;
+                    margin: 160px auto 0;
+                }
+                .footA{
+                    padding: 10px 20px;
+                    border-bottom: solid 1px var(--stroke-01);
+                }
+                    .footA ul{
+                        display: flex;
+                        gap: 40px;
+                    }
+                        .footA a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                            line-height: 24px; /* 133.333% */
+                        }
+                        #mint{
+                            color: var(--main-color, #00E5A7);
+                            font-weight: 500;
+                        }
+                
+                    .footB{
+                        display: flex;
+                        padding: 20px 20px;
+                        gap: 20px;
+                        align-items: center;
+                        flex-direction: column-reverse;
+                    }
+                        .footB .logo{
+                            display: flex;
+                        }
+                        .footB img{
+                            height: 30px;
+                        }
+                        .footB ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footB li{
+                            display: flex;
+                            align-items: center;
+                        }
+                        .footB li a{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 12px;
+                        }
+                        #flex{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                        }
+                    
+                    .footC{
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px 0 60px;
+                    }
+                        .footC ul{
+                            display: flex;
+                            gap: 20px;
+                        }
+                        .footC .copyright{
+                            color: var(--caption, #B5B5B5);
+                            font-size: 14px;
+                        }
             }
 
 
@@ -890,21 +1207,21 @@
                     <h4>Festival</h4>
                     <p>민트페이퍼는 페스티벌 브랜드의 아이덴티티를 강화하고, 자체 팀을 구성하여 내부 브랜드와 외부 기업과의 협업을 확대하며, 한국 페스티벌을 원조의 모습으로 다시 정립하고자 합니다.</p>
                 </div>
-                <div class="photo" style="background-image: url(/img/main/mintpaper01.jpg);"></div>
+                <div class="photo"><img src="img/main/mintpaper01.jpg" alt=""></div>
             </div>
             <div class="cont">
                 <div class="info">
                     <h4>Contents</h4>
                     <p>민트페이퍼는 다양하고 따뜻한 콘텐츠로 변화하고 있습니다. 수년간 축적된 자료와 특별한 영상, 새로운 오리지널 콘텐츠를 제공하며 기존 음악 방향성을 유지하되, 외부 채널과의 협업 및 새 분야 확장을 고려합니다.</p>
                 </div>
-                <div class="photo" style="background-image: url(/img/main/mintpaper02.jpg);"></div>
+                <div class="photo"><img src="img/main/mintpaper02.jpg" alt=""></div>
             </div>
             <div class="cont">
                 <div class="info">
                     <h4>Commerce</h4>
                     <p>'민트페이퍼샵'은 특별하고 독창적인 아이템으로, 젊은 예술가들의 작품을 주로 선보이며, 사람들의 개성을 존중하는 곳입니다. 젊은 예술가들과 함께 성장하며 민트페이퍼 팀의 다양한 관심사를 반영한 상품과 콘텐츠를 제공합니다.</p>
                 </div>
-                <div class="photo" style="background-image: url(/img/main/mintpaper03.jpg);"></div>
+                <div class="photo"><img src="img/main/mintpaper03.jpg" alt=""></div>
             </div>
         </div>
     </section>
@@ -926,21 +1243,23 @@
             </div>
         </div>
         <div class="conB-cont">
-            <div class="slide01">
+            
                 <a href="">
-                <div class="sli01-1">
-                    <div class="img" style="background-image: url(img/main/project01.jpg);"></div>
-                    <p class="title">'노리플라이, 정준일, 페퍼톤스'</p>
-                    <p class="date">2023.07.05</p>
-                </div></a>
+                    <div class="img"><img src="img/main/project01.jpg" alt=""></div>
+                    <div class="info">
+                        <p class="title">'노리플라이, 정준일, 페퍼톤스'</p>
+                        <p class="date">2023.07.05</p>
+                    </div>
+                </a>
                 <a href="">
-                    <div class="sli01-2">
-                        <div class="img"  style="background-image: url(img/main/project02.jpg);"></div>
+                    <div class="img"><img src="img/main/project02.jpg" alt=""></div>
+                    <div class="info">
                         <p class="title">MVP Concert – 솔루션스</p>
                         <p class="date">2023.02.13</p>
-                    </div></a>
+                    </div>
+                </a>
             </div>
-        </div>
+        
     </section>
 
     <!-- conC -->
@@ -967,7 +1286,7 @@
             <div class="conD-cont-colu">
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news01.jpg); height: 600px;"></div>
+                        <div class="photo"><img src="img/main/news01.jpg" alt=""></div>
                         <div class="info">
                             <h5>CDF2023-2024 D-30을 맞이하며</h4>
                             <p class="sub-title">올해의 마지막 실내 페스티벌 카운트다운 판타지의 D글이 시작되었습니다! D글을 보시는 모든 분들이 따뜻한 연말과 멋진 새해를 맞길 바라며!</p>
@@ -977,7 +1296,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news02.jpg);"></div>
+                        <div class="photo"><img src="img/main/news02.jpg" alt=""></div>
                         <div class="info">
                             <h5>GMF2023 Awards 결과 발표</h4>
                             <p class="sub-title">GMF2023 AWARDS 수상자는 11월 12일 민트페스타 vol. 71 EXPRESSION 현장 발표되었습니다. 다시 한번 현장에서 즐겁게 참여해주신 모든 관객 분들과 멋진 무대를 만들어주신 아티스트분들께 감사드립니다!</p>
@@ -990,7 +1309,7 @@
             <div class="conD-cont-colu">
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news03.jpg); height: 600px;"></div>
+                        <div class="photo"><img src="img/main/news03.jpg" alt=""></div>
                         <div class="info">
                             <h5>78LIVE - MmmPaa(음파) 프로젝트</h4>
                             <p class="sub-title">한정된 시간 속 무한한 시도 ‘78LIVE’
@@ -1001,7 +1320,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news04.jpg);"></div>
+                        <div class="photo"><img src="img/main/news04.jpg" alt=""></div>
                         <div class="info">
                             <h5>CDF 공연 종료시각 관련 안내 및 입장문</h4>
                             <p class="sub-title">CDF 공연 종료시각이 변경되었습니다. 해당 부분으로 인해 불편을 겪으신 모든 예매자분께 죄송하다는 말씀 전합니다.</p>
@@ -1011,7 +1330,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news05.jpg);"></div>
+                        <div class="photo"><img src="img/main/news05.jpg" alt=""></div>
                         <div class="info">
                             <h5>[사진] 브라이트랩 | 10.21(sat)</h4>
                             <p class="sub-title">GMF2023 | 10.21(sat)</p>
@@ -1024,7 +1343,7 @@
             <div class="conD-cont-colu">  
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news06.jpg);"></div>
+                        <div class="photo"><img src="img/main/news06.jpg" alt=""></div>
                         <div class="info">
                             <h5>A.N.D #40</h4>
                             <p class="sub-title">2015년 9월. 어렵지 않은, 부담 없이 즐길 수 있는 페스티벌을 표방하며 ‘Have A Nice Day’를 통해 3천여 관객과 처음 인사한 이후,이제 우리는 ‘Another Nice Day’를 통해 조금 더 자주, 가까이에서 인사를 나누고자 합니다.</p>
@@ -1034,7 +1353,7 @@
                 </article>
                 <article>
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news07.jpg);"></div>
+                        <div class="photo"><img src="img/main/news07.jpg" alt=""></div>
                         <div class="info">
                             <h5>[사진] 브라이트랩 | 10.22(sun)</h4>
                             <p class="sub-title">GMF2023 | 10.22(sun)</p>
@@ -1044,7 +1363,7 @@
                 </article>
                 <div class="cont-info">
                     <a href="#">
-                        <div class="photo" style="background-image: url(img/main/news08.jpg);"></div>
+                        <div class="photo"><img src="img/main/news08.jpg" alt=""></div>
                     </a>
                 </div>
             </div>
